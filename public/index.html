@@ -121,7 +121,7 @@
       } catch (e) {
         // Server bilan bog'lanib bo'lmadi
         document.getElementById('not-active-card').style.display = 'block';
-        document.getElementById('test-time-info').textContent = 'Server bilan bog\\'lanib bo\\'lmadi. Iltimos, sahifani yangilang.';
+        document.getElementById('test-time-info').textContent = "Server bilan bog'lanib bo'lmadi. Iltimos, sahifani yangilang.";
       }
     });
 
@@ -142,7 +142,7 @@
           infoEl.innerHTML = `Test vaqti (<strong>${formatDateTime(end)}</strong>) tugadi.`;
         }
       } else {
-        infoEl.textContent = 'Test vaqti hali belgilanmagan. O\\'qituvchi tomonidan ochiladi.';
+        infoEl.textContent = "Test vaqti hali belgilanmagan. O'qituvchi tomonidan ochiladi.";
       }
     }
 
@@ -195,7 +195,7 @@
         document.getElementById('entry-alert').style.display = 'none';
         document.getElementById('password').value = '';
       } catch(e) {
-        showAlert('O\\'quvchilar ro\\'yxatini yuklab bo\\'lmadi', 'danger');
+        showAlert("O'quvchilar ro'yxatini yuklab bo'lmadi", 'danger');
       }
     }
 
@@ -229,7 +229,7 @@
           btn.textContent = '🚀 Tizimga kirish';
         }
       } catch(e) {
-        showAlert('Server bilan bog\\'lanib bo\\'lmadi', 'danger');
+        showAlert("Server bilan bog'lanib bo'lmadi", 'danger');
         btn.disabled = false;
         btn.textContent = '🚀 Tizimga kirish';
       }

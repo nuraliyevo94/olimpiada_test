@@ -269,8 +269,7 @@
               placeholder="Javobingizni shu yerga kiriting..."
               value="${userAnswers['hard_' + q._idx] || ''}"
               oninput="setOpenAnswer(${idx}, ${q._idx}, this.value)"
-              autocomplete="off" inputmode="decimal">
-            <div class="open-answer-hint">💡 Natural sonni kiriting (masalan: 27500)</div>
+              autocomplete="off" inputmode="text">
           `;
         } else {
           answerHtml = `<div class="options-grid">` +

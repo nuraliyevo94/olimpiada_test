@@ -162,7 +162,10 @@
       <div class="admin-card" style="margin-bottom:16px;">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
           <div class="section-title" style="margin-bottom:0;">🧑‍🎓 O'quvchilar ro'yxati</div>
-          <button class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.2); padding:8px 16px; font-size:0.85rem;" onclick="loadStudents()">🔄 Yangilash</button>
+          <div>
+            <button class="btn btn-success" style="padding:8px 16px; font-size:0.85rem; margin-right:8px;" onclick="document.getElementById('add-student-modal').style.display='flex'">➕ O'quvchi qo'shish</button>
+            <button class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.2); padding:8px 16px; font-size:0.85rem;" onclick="loadStudents()">🔄 Yangilash</button>
+          </div>
         </div>
         <div class="results-table-wrap">
           <table class="results-table">
@@ -188,6 +191,37 @@
     <footer class="site-footer" style="color:rgba(255,255,255,0.3);">
       Muallif: <span style="color:rgba(255,255,255,0.7);">Otabek Nuraliyev</span> · Admin panel · 2026
     </footer>
+  </div>
+
+  <!-- Add Student Modal -->
+  <div id="add-student-modal" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); backdrop-filter:blur(4px); align-items:center; justify-content:center; z-index:100;">
+    <div class="admin-card" style="width:90%; max-width:400px; padding:24px;">
+      <div class="section-title">➕ Yangi o'quvchi qo'shish</div>
+      <div id="add-student-msg" class="alert" style="display:none;"></div>
+      <div class="form-group">
+        <label class="form-label">Ism familiyasi</label>
+        <input type="text" id="new-stu-name" class="form-input" placeholder="Masalan: Aliyev Vali">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Sinfi</label>
+        <select id="new-stu-sinf" class="form-input" style="background:#1E1E2F; color:#fff;">
+          <option value="5">5-sinf</option>
+          <option value="6">6-sinf</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Login</label>
+        <input type="text" id="new-stu-username" class="form-input" placeholder="Masalan: vali5">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Parol</label>
+        <input type="text" id="new-stu-password" class="form-input" value="123">
+      </div>
+      <div style="display:flex; gap:10px; margin-top:20px;">
+        <button class="btn btn-success" style="flex:1" onclick="submitNewStudent()">Saqlash</button>
+        <button class="btn btn-outline" style="flex:1; color:#fff; border-color:rgba(255,255,255,0.2);" onclick="document.getElementById('add-student-modal').style.display='none'">Bekor qilish</button>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -433,6 +467,44 @@
       el.textContent = msg;
       el.style.display = 'flex';
       setTimeout(() => el.style.display = 'none', 4000);
+    }
+
+    async function submitNewStudent() {
+      const name = document.getElementById('new-stu-name').value.trim();
+      const sinf = document.getElementById('new-stu-sinf').value;
+      const username = document.getElementById('new-stu-username').value.trim();
+      const password = document.getElementById('new-stu-password').value.trim();
+      const msgEl = document.getElementById('add-student-msg');
+
+      if(!name || !username || !password) {
+        msgEl.textContent = "Barcha maydonlarni to'ldiring";
+        msgEl.className = "alert alert-danger";
+        msgEl.style.display = 'block';
+        return;
+      }
+
+      try {
+        const resp = await fetch('/api/admin/students', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json', 'X-Admin-Token': adminToken},
+          body: JSON.stringify({ name, sinf, username, password })
+        });
+        const data = await resp.json();
+        if(data.success) {
+          document.getElementById('new-stu-name').value = '';
+          document.getElementById('new-stu-username').value = '';
+          document.getElementById('add-student-modal').style.display = 'none';
+          loadStudents();
+        } else {
+          msgEl.textContent = data.error || "Xatolik";
+          msgEl.className = "alert alert-danger";
+          msgEl.style.display = 'block';
+        }
+      } catch(e) {
+        msgEl.textContent = "Server xatosi";
+        msgEl.className = "alert alert-danger";
+        msgEl.style.display = 'block';
+      }
     }
 
     function escHtml(t) {

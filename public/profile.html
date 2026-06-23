@@ -229,7 +229,7 @@
           btn.disabled = false; btn.textContent = '💾 Saqlash';
         }
       } catch(e) {
-        alertEl.textContent = 'Server bilan bog\\'lanib bo\\'lmadi';
+        alertEl.textContent = "Server bilan bog\\'lanib bo\\'lmadi";
         alertEl.style.display = 'block';
         btn.disabled = false; btn.textContent = '💾 Saqlash';
       }
@@ -298,7 +298,7 @@
           btn.disabled = true;
           btn.style.opacity = '0.5';
           const alert = document.getElementById('test-alert');
-          alert.textContent = 'Maksimal 3 ta urinishdan foydalanib bo\\'ldingiz!';
+          alert.textContent = "Maksimal 3 ta urinishdan foydalanib bo\\'ldingiz!";
           alert.style.display = 'block';
         }
       }
@@ -324,7 +324,7 @@
         sessionStorage.setItem('testStartTime', Date.now().toString());
         window.location.href = '/test';
       } catch(e) {
-        document.getElementById('test-alert').textContent = 'Server bilan bog\\'lanib bo\\'lmadi';
+        document.getElementById('test-alert').textContent = "Server bilan bog\\'lanib bo\\'lmadi";
         document.getElementById('test-alert').style.display = 'block';
         btn.disabled = false;
         btn.innerHTML = '🚀 Yangi Testni Boshlash (Yozgi Olimpiada)';

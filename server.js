@@ -110,6 +110,29 @@ function shuffle(arr) {
   return a;
 }
 
+function formatName(name) {
+  if (!name) return '';
+  return name.toLowerCase().split(' ')
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(' ')
+    .replace(/O'g'li/ig, "o'g'li")
+    .replace(/Qizi/ig, "qizi")
+    .replace(/O'G'Li/ig, "o'g'li");
+}
+
+function getRandomQuestions(sinf) {
+  const all = readJSON(`questions-${sinf}.json`) || [];
+  if (all.length === 0) return { easy: [], medium: [], hard: [] };
+  
+  const third = Math.floor(all.length / 3);
+  
+  const easy = all.slice(0, third).sort(() => 0.5 - Math.random()).slice(0, 10);
+  const medium = all.slice(third, third * 2).sort(() => 0.5 - Math.random()).slice(0, 10);
+  const hard = all.slice(third * 2).sort(() => 0.5 - Math.random()).slice(0, 10);
+  
+  return { easy, medium, hard };
+}
+
 // ─── API: Test sozlamalari ───────────────────────────────────────────────────
 
 app.get('/api/settings', async (req, res) => {

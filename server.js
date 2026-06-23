@@ -128,7 +128,10 @@ function getRandomQuestions(sinf) {
   
   const easy = all.slice(0, third).sort(() => 0.5 - Math.random()).slice(0, 10);
   const medium = all.slice(third, third * 2).sort(() => 0.5 - Math.random()).slice(0, 10);
-  const hard = all.slice(third * 2).sort(() => 0.5 - Math.random()).slice(0, 10);
+  
+  const rawHard = all.slice(third * 2);
+  const validHard = rawHard.filter(q => /^\d+$/.test(String(q.answer).trim()) && parseInt(q.answer, 10) > 0);
+  const hard = validHard.sort(() => 0.5 - Math.random()).slice(0, 10);
   
   return { easy, medium, hard };
 }

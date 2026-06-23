@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel — Matematika Olimpiadasi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>">
+  <style>
+    body { background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%); }
+    body::before { display:none; }
+    .floating-deco { opacity: 0.05; }
+    .admin-logo { background: linear-gradient(135deg, #667eea, #764ba2); }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-card-val { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.8rem; color: #fff; }
+    .stat-card-label { font-size: 0.8rem; color: rgba(255,255,255,0.5); font-weight: 600; margin-top: 4px; }
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .pill-active { background: rgba(34,197,94,0.2); border: 1.5px solid rgba(34,197,94,0.4); color: #4ADE80; }
+    .pill-inactive { background: rgba(239,68,68,0.15); border: 1.5px solid rgba(239,68,68,0.3); color: #F87171; }
+    .pill-future { background: rgba(251,191,36,0.15); border: 1.5px solid rgba(251,191,36,0.3); color: #FCD34D; }
+    .results-table-wrap { overflow-x: auto; max-height: 320px; }
+    .results-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .results-table th { padding: 8px 12px; text-align: left; color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1.5px solid rgba(255,255,255,0.08); position: sticky; top: 0; background: rgba(30,30,50,0.98); }
+    .results-table td { padding: 10px 12px; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600; }
+    .results-table tr:hover td { background: rgba(255,255,255,0.04); }
+  </style>
+</head>
+<body>
+  <div class="floating-deco">🔧</div>
+  <div class="floating-deco">⚙️</div>
+  <div class="floating-deco">📊</div>
+  <div class="floating-deco">🛡️</div>
+
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="site-logo admin-logo">
+        <span class="site-logo-icon">🔧</span>
+        <span class="site-logo-text">Admin Panel</span>
+      </div>
+      <p class="site-subtitle" style="color:rgba(255,255,255,0.6);">Matematika olimpiadasi testi boshqaruvi</p>
+    </header>
+
+    <!-- Login form -->
+    <div class="container" id="login-section">
+      <div class="admin-card" style="max-width:420px; margin:0 auto;">
+        <div class="section-title">🔐 Admin kirish</div>
+        <div id="login-error" class="alert alert-danger" style="display:none;"></div>
+        <div class="form-group">
+          <label class="form-label">Login</label>
+          <input type="text" id="admin-login" class="form-input" placeholder="Login" value="Otabek">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Parol</label>
+          <input type="password" id="admin-pass" class="form-input" placeholder="Parol"
+            onkeydown="if(event.key==='Enter') doLogin()">
+        </div>
+        <button class="btn btn-sky btn-full" onclick="doLogin()">🔑 Kirish</button>
+        <div style="margin-top:16px; text-align:center;">
+          <a href="/" style="font-size:0.85rem; color:rgba(255,255,255,0.4); font-weight:600;">← Bosh sahifaga qaytish</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin panel -->
+    <div class="container" id="admin-section" style="display:none;">
+
+      <!-- Status card -->
+      <div class="admin-card" style="margin-bottom:16px;">
+        <div class="section-title">📡 Test holati</div>
+        <div id="status-pill" class="status-pill pill-inactive">
+          <span class="status-dot status-inactive"></span>
+          <span id="status-text">Faol emas</span>
+        </div>
+        <div id="time-display" style="font-size:0.88rem; color:rgba(255,255,255,0.5); font-weight:600;"></div>
+      </div>
+
+      <!-- Statistics -->
+      <div class="admin-card" style="margin-bottom:16px;">
+        <div class="section-title">📊 Statistika</div>
+        <div class="stat-grid" id="stat-grid">
+          <div class="stat-card"><div class="stat-card-val" id="stat-total">—</div><div class="stat-card-label">Jami urinish</div></div>
+          <div class="stat-card"><div class="stat-card-val" id="stat-students">—</div><div class="stat-card-label">O'quvchilar</div></div>
+          <div class="stat-card"><div class="stat-card-val" id="stat-5">—</div><div class="stat-card-label">5-sinf</div></div>
+          <div class="stat-card"><div class="stat-card-val" id="stat-6">—</div><div class="stat-card-label">6-sinf</div></div>
+          <div class="stat-card"><div class="stat-card-val" id="stat-avg">—</div><div class="stat-card-label">O'rtacha ball</div></div>
+          <div class="stat-card"><div class="stat-card-val" id="stat-max">—</div><div class="stat-card-label">Eng yuqori</div></div>
+        </div>
+      </div>
+
+      <!-- Time settings -->
+      <div class="admin-card" style="margin-bottom:16px;">
+        <div class="section-title">⏰ Test vaqtini belgilash</div>
+        <div id="settings-msg" class="alert" style="display:none;"></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">Boshlanish vaqti</label>
+            <input type="datetime-local" id="start-time" class="form-input">
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">Tugash vaqti</label>
+            <input type="datetime-local" id="end-time" class="form-input">
+          </div>
+        </div>
+        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn btn-success" onclick="saveSettings()">💾 Saqlash</button>
+          <button class="btn btn-sky" onclick="setQuickTime(1)">⚡ 1 soat (hozirdan)</button>
+          <button class="btn btn-sky" onclick="setQuickTime(2)">⚡ 2 soat (hozirdan)</button>
+          <button class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.2);" onclick="clearTime()">🚫 Testni yopish</button>
+        </div>
+      </div>
+
+      <!-- Results table -->
+      <div class="admin-card" style="margin-bottom:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+          <div class="section-title" style="margin-bottom:0;">📋 Barcha natijalar</div>
+          <button class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.2); padding:8px 16px; font-size:0.85rem;" onclick="loadResults()">🔄 Yangilash</button>
+        </div>
+        <div class="results-table-wrap">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>#</th><th>Ism</th><th>Sinf</th><th>Ball</th><th>Urinish</th><th>Vaqt</th><th>Sana</th>
+              </tr>
+            </thead>
+            <tbody id="results-tbody">
+              <tr><td colspan="7" style="text-align:center; color:rgba(255,255,255,0.3); padding:24px;">Yuklanmoqda...</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:16px; text-align:right;">
+          <button class="btn" style="background:rgba(239,68,68,0.2); color:#F87171; border:1.5px solid rgba(239,68,68,0.3); font-size:0.85rem; padding:8px 16px;" onclick="clearResults()">🗑️ Barcha natijalarni o'chirish</button>
+        </div>
+      </div>
+
+      <!-- Students table -->
+      <div class="admin-card" style="margin-bottom:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+          <div class="section-title" style="margin-bottom:0;">🧑‍🎓 O'quvchilar ro'yxati</div>
+          <button class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.2); padding:8px 16px; font-size:0.85rem;" onclick="loadStudents()">🔄 Yangilash</button>
+        </div>
+        <div class="results-table-wrap">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Ism</th><th>Sinf</th><th>Login</th><th>Parol</th><th>XP</th><th>O'chirish</th>
+              </tr>
+            </thead>
+            <tbody id="students-tbody">
+              <tr><td colspan="6" style="text-align:center; color:rgba(255,255,255,0.3); padding:24px;">Yuklanmoqda...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="/leaderboard" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.2);">📊 Peshqadamlar</a>
+        <a href="/" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.2);">🏠 Bosh sahifa</a>
+        <button class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.2);" onclick="logout()">🚪 Chiqish</button>
+      </div>
+    </div>
+
+    <footer class="site-footer" style="color:rgba(255,255,255,0.3);">
+      Muallif: <span style="color:rgba(255,255,255,0.7);">Otabek Nuraliyev</span> · Admin panel · 2026
+    </footer>
+  </div>
+
+  <script>
+    let adminToken = sessionStorage.getItem('adminToken') || null;
+
+    function pad(n) { return n.toString().padStart(2,'0'); }
+    function formatTime(sec) {
+      const h=Math.floor(sec/3600), m=Math.floor((sec%3600)/60), s=sec%60;
+      return h>0?`${pad(h)}:${pad(m)}:${pad(s)}`:`${pad(m)}:${pad(s)}`;
+    }
+    function formatDT(iso) {
+      const d=new Date(iso);
+      return `${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (adminToken) showAdmin();
+    });
+
+    async function doLogin() {
+      const login = document.getElementById('admin-login').value.trim();
+      const pass  = document.getElementById('admin-pass').value;
+      if (!login || !pass) return;
+
+      try {
+        const resp = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({login, password: pass})
+        });
+        const data = await resp.json();
+        if (data.success) {
+          adminToken = data.token;
+          sessionStorage.setItem('adminToken', adminToken);
+          showAdmin();
+        } else {
+          document.getElementById('login-error').textContent = data.error || 'Noto\'g\'ri login yoki parol';
+          document.getElementById('login-error').style.display = 'flex';
+        }
+      } catch(e) {
+        document.getElementById('login-error').textContent = 'Server bilan bog\'lanib bo\'lmadi';
+        document.getElementById('login-error').style.display = 'flex';
+      }
+    }
+
+    function showAdmin() {
+      document.getElementById('login-section').style.display = 'none';
+      document.getElementById('admin-section').style.display = 'block';
+      loadStatus();
+      loadResults();
+      loadStudents();
+    }
+
+    function logout() {
+      adminToken = null;
+      sessionStorage.removeItem('adminToken');
+      document.getElementById('admin-section').style.display = 'none';
+      document.getElementById('login-section').style.display = 'block';
+    }
+
+    async function loadStatus() {
+      try {
+        const resp = await fetch('/api/settings');
+        const s = await resp.json();
+        const pill = document.getElementById('status-pill');
+        const statusText = document.getElementById('status-text');
+        const timeDisplay = document.getElementById('time-display');
+
+        if (s.testOpen) {
+          pill.className = 'status-pill pill-active';
+          statusText.innerHTML = '<span class="status-dot status-active"></span> Faol (test ochiq)';
+          timeDisplay.textContent = `Tugaydi: ${formatDT(s.testEndTime)}`;
+        } else if (s.testStartTime && new Date(s.testStartTime) > new Date()) {
+          pill.className = 'status-pill pill-future';
+          statusText.innerHTML = '⏳ Hali boshlanmagan';
+          timeDisplay.textContent = `Boshlanadi: ${formatDT(s.testStartTime)}`;
+        } else {
+          pill.className = 'status-pill pill-inactive';
+          statusText.innerHTML = '⭕ Faol emas';
+          timeDisplay.textContent = s.testEndTime ? `Tugagan: ${formatDT(s.testEndTime)}` : 'Vaqt belgilanmagan';
+        }
+
+        // Fill datetime inputs
+        if (s.testStartTime) {
+          const d = new Date(s.testStartTime);
+          d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+          document.getElementById('start-time').value = d.toISOString().slice(0,16);
+        }
+        if (s.testEndTime) {
+          const d = new Date(s.testEndTime);
+          d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
+          document.getElementById('end-time').value = d.toISOString().slice(0,16);
+        }
+      } catch(e) {}
+    }
+
+    async function loadResults() {
+      try {
+        const resp = await fetch('/api/admin/results', {
+          headers: {'X-Admin-Token': adminToken}
+        });
+        const results = await resp.json();
+
+        // Stats
+        const students = [...new Set(results.map(r => r.name.toLowerCase()))];
+        const scores5 = results.filter(r => r.sinf === '5' && r.countsForLeaderboard).map(r => r.score);
+        const scores6 = results.filter(r => r.sinf === '6' && r.countsForLeaderboard).map(r => r.score);
+        const allScores = results.filter(r => r.countsForLeaderboard).map(r => r.score);
+        document.getElementById('stat-total').textContent = results.length;
+        document.getElementById('stat-students').textContent = students.length;
+        document.getElementById('stat-5').textContent = results.filter(r => r.sinf === '5').length;
+        document.getElementById('stat-6').textContent = results.filter(r => r.sinf === '6').length;
+        document.getElementById('stat-avg').textContent = allScores.length ? Math.round(allScores.reduce((a,b)=>a+b,0)/allScores.length) : '—';
+        document.getElementById('stat-max').textContent = allScores.length ? Math.max(...allScores) : '—';
+
+        // Table
+        const tbody = document.getElementById('results-tbody');
+        if (results.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:rgba(255,255,255,0.3); padding:24px;">Hali natijalar yo\'q</td></tr>';
+          return;
+        }
+        tbody.innerHTML = [...results].reverse().map((r, i) => `
+          <tr>
+            <td style="color:rgba(255,255,255,0.4);">${results.length - i}</td>
+            <td>${escHtml(r.name)}</td>
+            <td><span style="background:rgba(79,195,247,0.2); color:#4FC3F7; border-radius:50px; padding:2px 10px; font-size:0.78rem;">${r.sinf}-sinf</span></td>
+            <td><strong style="color:#FFD93D; font-family:'Poppins',sans-serif;">${r.score}</strong></td>
+            <td><span style="color:${r.countsForLeaderboard ? '#4ADE80' : '#6B7280'};">${r.attemptNum}-urinish</span></td>
+            <td style="font-family:'Poppins',sans-serif;">${formatTime(r.timeSpent)}</td>
+            <td style="color:rgba(255,255,255,0.5);">${formatDT(r.submittedAt)}</td>
+          </tr>
+        `).join('');
+      } catch(e) {
+        document.getElementById('results-tbody').innerHTML = '<tr><td colspan="7" style="text-align:center; color:#F87171; padding:24px;">Xatolik yuz berdi</td></tr>';
+      }
+    }
+
+    async function saveSettings() {
+      const startVal = document.getElementById('start-time').value;
+      const endVal = document.getElementById('end-time').value;
+      if (!startVal || !endVal) {
+        showSettingsMsg('Ikkala vaqtni ham kiriting', 'danger');
+        return;
+      }
+      const startTime = new Date(startVal).toISOString();
+      const endTime = new Date(endVal).toISOString();
+      if (new Date(endTime) <= new Date(startTime)) {
+        showSettingsMsg('Tugash vaqti boshlanish vaqtidan keyin bo\'lishi kerak', 'danger');
+        return;
+      }
+      try {
+        const resp = await fetch('/api/admin/settings', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json', 'X-Admin-Token': adminToken},
+          body: JSON.stringify({testStartTime: startTime, testEndTime: endTime, isActive: true})
+        });
+        const data = await resp.json();
+        if (data.success) {
+          showSettingsMsg('✅ Saqlandi! Test vaqti belgilandi.', 'success');
+          loadStatus();
+        } else {
+          showSettingsMsg(data.error || 'Xatolik', 'danger');
+        }
+      } catch(e) {
+        showSettingsMsg('Server bilan bog\'lanib bo\'lmadi', 'danger');
+      }
+    }
+
+    function setQuickTime(hours) {
+      const start = new Date();
+      const end = new Date(start.getTime() + hours * 3600000);
+      const toLocal = d => {
+        const l = new Date(d); l.setMinutes(l.getMinutes() - l.getTimezoneOffset());
+        return l.toISOString().slice(0,16);
+      };
+      document.getElementById('start-time').value = toLocal(start);
+      document.getElementById('end-time').value = toLocal(end);
+    }
+
+    async function clearTime() {
+      if (!confirm('Testni yopasizmi?')) return;
+      try {
+        await fetch('/api/admin/settings', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json', 'X-Admin-Token': adminToken},
+          body: JSON.stringify({testStartTime: null, testEndTime: null, isActive: false})
+        });
+        showSettingsMsg('Test yopildi', 'info');
+        loadStatus();
+      } catch(e) {}
+    }
+
+    async function clearResults() {
+      if (!confirm('Barcha natijalarni o\'chirasizmi? Bu amalni qaytarib bo\'lmaydi!')) return;
+      try {
+        await fetch('/api/admin/results', {
+          method: 'DELETE',
+          headers: {'X-Admin-Token': adminToken}
+        });
+        showSettingsMsg('✅ Barcha natijalar o\'chirildi', 'success');
+        loadResults();
+      } catch(e) {}
+    }
+
+    async function loadStudents() {
+      try {
+        const resp = await fetch('/api/admin/students', {
+          headers: {'X-Admin-Token': adminToken}
+        });
+        const students = await resp.json();
+        const tbody = document.getElementById('students-tbody');
+        if (students.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; color:rgba(255,255,255,0.3); padding:24px;">Hali o\'quvchilar yo\'q</td></tr>';
+          return;
+        }
+        tbody.innerHTML = students.map(s => `
+          <tr>
+            <td>${escHtml(s.name)}</td>
+            <td>${s.sinf}-sinf</td>
+            <td><code style="background:rgba(255,255,255,0.1); padding:2px 6px; border-radius:4px;">${s.username}</code></td>
+            <td>${s.password}</td>
+            <td>${s.xp || 0}</td>
+            <td><button class="btn btn-danger" style="padding:4px 8px; font-size:0.75rem;" onclick="deleteStudent('${s.id}')">🗑️</button></td>
+          </tr>
+        `).join('');
+      } catch(e) {}
+    }
+
+    async function deleteStudent(id) {
+      if (!confirm('O\'quvchini o\'chirasizmi?')) return;
+      try {
+        await fetch(`/api/admin/students/${id}`, {
+          method: 'DELETE',
+          headers: {'X-Admin-Token': adminToken}
+        });
+        loadStudents();
+      } catch(e) {}
+    }
+
+    function showSettingsMsg(msg, type) {
+      const el = document.getElementById('settings-msg');
+      el.className = `alert alert-${type}`;
+      el.textContent = msg;
+      el.style.display = 'flex';
+      setTimeout(() => el.style.display = 'none', 4000);
+    }
+
+    function escHtml(t) {
+      return (t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+  </script>
+</body>
+</html>

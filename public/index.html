@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olimpiada Testi — Otabek Nuraliyev</title>
+  <meta name="description" content="5-6 sinf o'quvchilari uchun matematika olimpiadasi tayyorgarlik testi. Muallif: Otabek Nuraliyev.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>">
+</head>
+<body>
+  <!-- Floating decorations -->
+  <div class="floating-deco">☀️</div>
+  <div class="floating-deco">🌟</div>
+  <div class="floating-deco">🏅</div>
+  <div class="floating-deco">✨</div>
+  <div class="floating-deco">🎯</div>
+  <div class="floating-deco">🌈</div>
+
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="site-logo">
+        <span class="site-logo-icon">🏆</span>
+        <span class="site-logo-text">Matematika Olimpiadasi</span>
+      </div>
+      <p class="site-subtitle">Yozgi tayyorgarlik testi · 5 va 6-sinf o'quvchilari uchun</p>
+    </header>
+
+    <div class="container">
+      <!-- Test faol emas holati -->
+      <div id="not-active-card" class="card" style="display:none; text-align:center;">
+        <div style="font-size:4rem; margin-bottom:16px;">⏰</div>
+        <h2 class="card-title" style="text-align:center;">Test hozir faol emas</h2>
+        <p class="card-subtitle" style="text-align:center;" id="test-time-info">O'qituvchi tomonidan belgilangan vaqtda test ochiladi.</p>
+        <div id="countdown-box" style="display:none; margin-top:20px;">
+          <div style="font-size:0.9rem; font-weight:700; color:#6B7280; margin-bottom:8px;">TESTGACHA QOLDI:</div>
+          <div id="countdown-timer" style="font-size:2rem; font-weight:800; color:#0288D1; font-family:'Poppins',sans-serif;"></div>
+        </div>
+        <div style="margin-top:24px;">
+          <a href="/leaderboard" class="btn btn-outline" style="margin-right:8px;">📊 Peshqadamlar</a>
+          <a href="/admin" class="btn btn-outline">🔧 Admin</a>
+        </div>
+      </div>
+
+      <!-- Kirish formasi (Login) -->
+      <div id="entry-card" class="card" style="display:none;">
+        <h1 class="card-title">🎉 Xush kelibsiz!</h1>
+        <p class="card-subtitle">
+          Tizimga kirish uchun avval sinfingizni tanlang, so'ngra o'z ismingizni belgilang.
+        </p>
+
+        <div id="entry-alert" class="alert alert-info" style="display:none;"></div>
+
+        <div class="form-group">
+          <label class="form-label">🎓 Sinfingizni tanlang</label>
+          <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+            <button class="btn btn-outline" id="btn-sinf-5" style="flex:1" onclick="selectSinf('5')">
+              📚 5-sinf
+            </button>
+            <button class="btn btn-outline" id="btn-sinf-6" style="flex:1" onclick="selectSinf('6')">
+              📖 6-sinf
+            </button>
+          </div>
+        </div>
+
+        <div id="student-select-group" class="form-group" style="display:none;">
+          <label class="form-label" for="student-select">👤 Ismingizni tanlang</label>
+          <select id="student-select" class="form-input">
+            <option value="">-- Tanlang --</option>
+          </select>
+        </div>
+
+        <div id="password-group" class="form-group" style="display:none;">
+          <label class="form-label" for="password">🔑 Parol</label>
+          <input type="password" id="password" class="form-input"
+            placeholder="Parolni kiriting" onkeydown="if(event.key==='Enter') login()">
+        </div>
+
+        <button class="btn btn-primary btn-full" id="login-btn" onclick="login()" style="display:none;">
+          🚀 Tizimga kirish
+        </button>
+
+        <div style="text-align:center; margin-top:16px;">
+          <a href="/leaderboard" style="font-size:0.9rem; color:#0288D1; font-weight:700; text-decoration:none;">
+            📊 Peshqadamlar jadvalini ko'rish →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      Muallif: <span>Otabek Nuraliyev</span> · Matematika olimpiadasi testi · 2026
+    </footer>
+  </div>
+
+  <script>
+    let testEndTime = null;
+    let countdownInterval = null;
+
+    // Sahifa yuklanganda
+    window.addEventListener('DOMContentLoaded', async () => {
+      // Agar allaqachon login qilgan bo'lsa
+      if (sessionStorage.getItem('student')) {
+        window.location.href = '/profile';
+        return;
+      }
+
+      try {
+        const resp = await fetch('/api/settings');
+        const settings = await resp.json();
+
+        if (settings.testOpen) {
+          testEndTime = settings.testEndTime;
+          document.getElementById('entry-card').style.display = 'block';
+          document.getElementById('not-active-card').style.display = 'none';
+        } else {
+          document.getElementById('entry-card').style.display = 'none';
+          document.getElementById('not-active-card').style.display = 'block';
+          showTimeInfo(settings);
+        }
+      } catch (e) {
+        // Server bilan bog'lanib bo'lmadi
+        document.getElementById('not-active-card').style.display = 'block';
+        document.getElementById('test-time-info').textContent = 'Server bilan bog\\'lanib bo\\'lmadi. Iltimos, sahifani yangilang.';
+      }
+    });
+
+    function showTimeInfo(settings) {
+      const infoEl = document.getElementById('test-time-info');
+      const countdownBox = document.getElementById('countdown-box');
+
+      if (settings.testStartTime && settings.testEndTime) {
+        const start = new Date(settings.testStartTime);
+        const end = new Date(settings.testEndTime);
+        const now = new Date();
+
+        if (now < start) {
+          infoEl.innerHTML = `Test <strong>${formatDateTime(start)}</strong> dan <strong>${formatDateTime(end)}</strong> gacha ochiq bo'ladi.`;
+          countdownBox.style.display = 'block';
+          startCountdown(start);
+        } else if (now > end) {
+          infoEl.innerHTML = `Test vaqti (<strong>${formatDateTime(end)}</strong>) tugadi.`;
+        }
+      } else {
+        infoEl.textContent = 'Test vaqti hali belgilanmagan. O\\'qituvchi tomonidan ochiladi.';
+      }
+    }
+
+    function startCountdown(targetTime) {
+      const timerEl = document.getElementById('countdown-timer');
+      clearInterval(countdownInterval);
+      countdownInterval = setInterval(() => {
+        const diff = new Date(targetTime) - new Date();
+        if (diff <= 0) {
+          clearInterval(countdownInterval);
+          window.location.reload();
+          return;
+        }
+        const h = Math.floor(diff / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        timerEl.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+      }, 1000);
+    }
+
+    function formatDateTime(d) {
+      return d.toLocaleString('uz-UZ', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' });
+    }
+    function pad(n) { return n.toString().padStart(2, '0'); }
+
+    let selectedSinf = null;
+    let studentsList = [];
+
+    async function selectSinf(sinf) {
+      selectedSinf = sinf;
+      document.getElementById('btn-sinf-5').style.background = sinf === '5' ? 'var(--sky-light)' : 'transparent';
+      document.getElementById('btn-sinf-5').style.color = sinf === '5' ? 'var(--sky-dark)' : 'var(--text-dark)';
+      document.getElementById('btn-sinf-5').style.borderColor = sinf === '5' ? 'var(--sky-dark)' : 'rgba(0,0,0,0.1)';
+      
+      document.getElementById('btn-sinf-6').style.background = sinf === '6' ? 'var(--sky-light)' : 'transparent';
+      document.getElementById('btn-sinf-6').style.color = sinf === '6' ? 'var(--sky-dark)' : 'var(--text-dark)';
+      document.getElementById('btn-sinf-6').style.borderColor = sinf === '6' ? 'var(--sky-dark)' : 'rgba(0,0,0,0.1)';
+      
+      try {
+        const resp = await fetch(`/api/students/list/${sinf}`);
+        studentsList = await resp.json();
+        
+        const select = document.getElementById('student-select');
+        select.innerHTML = '<option value="">-- Ismingizni tanlang --</option>' + 
+          studentsList.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+        
+        document.getElementById('student-select-group').style.display = 'block';
+        document.getElementById('password-group').style.display = 'block';
+        document.getElementById('login-btn').style.display = 'block';
+        document.getElementById('entry-alert').style.display = 'none';
+        document.getElementById('password').value = '';
+      } catch(e) {
+        showAlert('O\\'quvchilar ro\\'yxatini yuklab bo\\'lmadi', 'danger');
+      }
+    }
+
+    async function login() {
+      const studentId = document.getElementById('student-select').value;
+      const password = document.getElementById('password').value.trim();
+      
+      if (!studentId || !password) {
+        showAlert('Iltimos, ismingizni tanlang va parolni kiriting', 'warning');
+        return;
+      }
+
+      const btn = document.getElementById('login-btn');
+      btn.disabled = true;
+      btn.textContent = '⏳ Tekshirilmoqda...';
+
+      try {
+        const resp = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: studentId, password })
+        });
+        
+        const data = await resp.json();
+        if (data.success) {
+          sessionStorage.setItem('student', JSON.stringify(data.student));
+          window.location.href = '/profile';
+        } else {
+          showAlert(data.error || 'Xatolik', 'danger');
+          btn.disabled = false;
+          btn.textContent = '🚀 Tizimga kirish';
+        }
+      } catch(e) {
+        showAlert('Server bilan bog\\'lanib bo\\'lmadi', 'danger');
+        btn.disabled = false;
+        btn.textContent = '🚀 Tizimga kirish';
+      }
+    }
+
+    function showAlert(msg, type='info') {
+      const el = document.getElementById('entry-alert');
+      el.className = `alert alert-${type}`;
+      el.textContent = msg;
+      el.style.display = 'flex';
+    }
+  </script>
+</body>
+</html>

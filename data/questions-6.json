@@ -1,0 +1,3752 @@
+[
+  {
+    "id": 1,
+    "text": "Tenglamani yeching: \\(-4x + 3 − 2(−1 − 3x) = −5\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "−1"
+      },
+      {
+        "letter": "B",
+        "text": "−5"
+      },
+      {
+        "letter": "C",
+        "text": "1"
+      },
+      {
+        "letter": "D",
+        "text": "0"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "5",
+    "type": "mcq"
+  },
+  {
+    "id": 2,
+    "text": "Ifodaning qiymatini toping: \\(\\frac{3}{7}(−0,54) − 1,56 · \\frac{3}{7}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "0,09"
+      },
+      {
+        "letter": "B",
+        "text": "−0,9"
+      },
+      {
+        "letter": "C",
+        "text": "−0,09"
+      },
+      {
+        "letter": "D",
+        "text": "0,9"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "0.9",
+    "type": "mcq"
+  },
+  {
+    "id": 3,
+    "text": "Radiusi 8,1 sm bo‘lgan doira yuzining \\(\\frac{2}{9}\\) qismini toping. (\\(\\pi ≈ 3,1\\) deb hisoblang)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "45,188 sm²"
+      },
+      {
+        "letter": "B",
+        "text": "45,198 sm²"
+      },
+      {
+        "letter": "C",
+        "text": "42,78 sm²"
+      },
+      {
+        "letter": "D",
+        "text": "44,198 sm²"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "42.78",
+    "type": "mcq"
+  },
+  {
+    "id": 4,
+    "text": "Radiusi 7,2 sm va aylana uzunligining \\(\\frac{3}{8}\\) qismiga teng bo‘lgan yoyning uzunligini toping. Bunda \\(\\pi ≈ 3,14\\).",
+    "options": [
+      {
+        "letter": "A",
+        "text": "5,652 sm"
+      },
+      {
+        "letter": "B",
+        "text": "16,96 sm"
+      },
+      {
+        "letter": "C",
+        "text": "16,956 sm"
+      },
+      {
+        "letter": "D",
+        "text": "16,965 sm"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "16.965",
+    "type": "mcq"
+  },
+  {
+    "id": 5,
+    "text": "\\(7^{2014}\\) sonining oxirgi raqamini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1"
+      },
+      {
+        "letter": "B",
+        "text": "7"
+      },
+      {
+        "letter": "C",
+        "text": "3"
+      },
+      {
+        "letter": "D",
+        "text": "9"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "1",
+    "type": "mcq"
+  },
+  {
+    "id": 6,
+    "text": "Ikkita sonning yig‘indisi 140 ga teng. Birinchi sonning 8 % i ikkinchi sonning 6 % i ga teng. Shu sonlarni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "60; 80"
+      },
+      {
+        "letter": "B",
+        "text": "75; 65"
+      },
+      {
+        "letter": "C",
+        "text": "50; 90"
+      },
+      {
+        "letter": "D",
+        "text": "40; 100"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "60",
+    "type": "mcq"
+  },
+  {
+    "id": 7,
+    "text": "Agar tijoratchi molning 1 kg ini 40 so‘mdan sotsa, 1800 so‘m zarar ko‘radi. 1 kg ini 70 so‘mdan sotsa, 900 so‘m foyda ko‘radi. Tijoratchida necha kg mol bo‘lgan?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "90"
+      },
+      {
+        "letter": "B",
+        "text": "100"
+      },
+      {
+        "letter": "C",
+        "text": "60"
+      },
+      {
+        "letter": "D",
+        "text": "70"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "90",
+    "type": "mcq"
+  },
+  {
+    "id": 8,
+    "text": "Hovuzga ikkita quvur o‘tkazilgan. Birinchi quvur bo‘sh hovuzni 10 soatda to‘ldiradi, ikkinchisi esa to‘la hovuzni 15 soatda bo‘shatadi. Hovuz bo‘sh bo‘lgan vaqtda ikkala quvur birdaniga ochilsa, hovuz necha soatdan keyin to‘ladi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "30"
+      },
+      {
+        "letter": "B",
+        "text": "32"
+      },
+      {
+        "letter": "C",
+        "text": "28"
+      },
+      {
+        "letter": "D",
+        "text": "26"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "28",
+    "type": "mcq"
+  },
+  {
+    "id": 9,
+    "text": "Yig‘indini hisoblang: \\(\\frac{3}{154} + \\frac{3}{238} + \\frac{3}{340} + \\frac{3}{460} + \\frac{3}{598}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{11}{286}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{3}{15}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{15}{286}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{3}{286}"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "315",
+    "type": "mcq"
+  },
+  {
+    "id": 10,
+    "text": "\\(a\\) va \\(b\\) natural sonlar bo‘lib, \\(a + b = 32\\) bo‘lsa, \\(a · b\\) ning eng katta qiymatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "230"
+      },
+      {
+        "letter": "B",
+        "text": "256"
+      },
+      {
+        "letter": "C",
+        "text": "64"
+      },
+      {
+        "letter": "D",
+        "text": "320"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "320",
+    "type": "mcq"
+  },
+  {
+    "id": 11,
+    "text": "\\(n\\) sonini 5 ga bo‘lganda qoldiq 3 ga, \\(m\\) sonini 5 ga bo‘lganda qoldiq 4 ga teng bo‘lsa, shu sonlar kvadratlarining yig‘indisini 5 ga bo‘lgandagi qoldiqni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3"
+      },
+      {
+        "letter": "B",
+        "text": "2"
+      },
+      {
+        "letter": "C",
+        "text": "4"
+      },
+      {
+        "letter": "D",
+        "text": "0"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "2",
+    "type": "mcq"
+  },
+  {
+    "id": 12,
+    "text": "Yulduzdagi pulning \\(\\frac{1}{6}\\) qismi Dildoradagi pulning \\(\\frac{1}{3}\\) qismiga teng. Yulduz pulining qancha qismini Dildoraga bersa ularning pullari o‘zaro teng bo‘ladi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "0,25"
+      },
+      {
+        "letter": "B",
+        "text": "0,5"
+      },
+      {
+        "letter": "C",
+        "text": "0,75"
+      },
+      {
+        "letter": "D",
+        "text": "0,1(6)"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "0.1",
+    "type": "mcq"
+  },
+  {
+    "id": 13,
+    "text": "Hajmi \\(\\frac{27}{64}\\,\\text{sm}^3\\) bo‘lgan kubning barcha qirralari yig‘indisini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "9 sm"
+      },
+      {
+        "letter": "B",
+        "text": "3 sm"
+      },
+      {
+        "letter": "C",
+        "text": "12 sm"
+      },
+      {
+        "letter": "D",
+        "text": "32 sm"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "9",
+    "type": "mcq"
+  },
+  {
+    "id": 14,
+    "text": "Bahovuddin al-Omiliy masalasi: Bir kishiga ikki qismdan iborat mukofot tavsiya qilinadi. Ularning ayirmasi 20 ga, ko‘paytmasi 96 ga teng. Mukofotning katta qismini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "14"
+      },
+      {
+        "letter": "B",
+        "text": "17"
+      },
+      {
+        "letter": "C",
+        "text": "12"
+      },
+      {
+        "letter": "D",
+        "text": "24"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "24",
+    "type": "mcq"
+  },
+  {
+    "id": 15,
+    "text": "\\(a − 3b\\) va \\(3b − a\\) 4 sonlari proporsiyaning ketma-ket hadlari bo‘lsa, \\(\\frac{a^2 − b^2}{ab}\\) kasrning qiymatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{6}{5}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{7}{3}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{8}{3}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{9}{5}"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "65",
+    "type": "mcq"
+  },
+  {
+    "id": 16,
+    "text": "28 ning juft bo‘luvchilari va tub bo‘luvchilari yig‘indisini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "57"
+      },
+      {
+        "letter": "B",
+        "text": "55"
+      },
+      {
+        "letter": "C",
+        "text": "58"
+      },
+      {
+        "letter": "D",
+        "text": "30"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "58",
+    "type": "mcq"
+  },
+  {
+    "id": 17,
+    "text": "Bir kombayn daladagi hosilni 15 soatda, boshqasi esa shu hosilni 10 soatda yig‘ib olishi mumkin. Ikkala kombayn birgalikda hosilni necha soatda yig‘ib olishi mumkin?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "7"
+      },
+      {
+        "letter": "B",
+        "text": "5,5"
+      },
+      {
+        "letter": "C",
+        "text": "6"
+      },
+      {
+        "letter": "D",
+        "text": "8"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "5.5",
+    "type": "mcq"
+  },
+  {
+    "id": 18,
+    "text": "Do‘kondagi choynak 6400 so‘m turadi. Oyning oxirida narxlar pasayib, choynaking narxi 5440 so‘m bo‘ldi. Choynaking narxi necha foizga kamaygan?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "10 %"
+      },
+      {
+        "letter": "B",
+        "text": "25 %"
+      },
+      {
+        "letter": "C",
+        "text": "20 %"
+      },
+      {
+        "letter": "D",
+        "text": "15 %"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "15",
+    "type": "mcq"
+  },
+  {
+    "id": 19,
+    "text": "Agar \\(m, n, p, q\\) sonlarning nisbati 2 : 3 : 4 : 5 kabi bo‘lsa, \\(\\frac{m + n}{p + q}\\) ifodaning qiymatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{6}{7}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{1}{9}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{9}{5}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{5}{9}"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "59",
+    "type": "mcq"
+  },
+  {
+    "id": 20,
+    "text": "Ikkita bolada bir xil sondagi tangalar bor. Ulardan birida faqat 5 so‘mlik, ikkinchisida esa faqat 10 so‘mlik. Ikkalasidagi pul 105 so‘m bo‘lsa, ularning har birida nechta tanga pul bor?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "5 ta"
+      },
+      {
+        "letter": "B",
+        "text": "7 ta"
+      },
+      {
+        "letter": "C",
+        "text": "10 ta"
+      },
+      {
+        "letter": "D",
+        "text": "15 ta"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "7",
+    "type": "mcq"
+  },
+  {
+    "id": 21,
+    "text": "Birinchi son 82,5, ikkinchi son birinchisidan 1,5 marta kichik, uchinchi son esa birinchi va ikkinchi sonlar ayirmasining 40 % ini tashkil qiladi. Bu sonlarning o‘rta arifmetigini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "51,5"
+      },
+      {
+        "letter": "B",
+        "text": "50,5"
+      },
+      {
+        "letter": "C",
+        "text": "49,5"
+      },
+      {
+        "letter": "D",
+        "text": "48,5"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "50.5",
+    "type": "mcq"
+  },
+  {
+    "id": 22,
+    "text": "3375 va 2250 sonlarining eng kichik umumiy karralisini va bu sonlarning umumiy bo‘luvchilari sonini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "6750; 1125"
+      },
+      {
+        "letter": "B",
+        "text": "1125; 6750"
+      },
+      {
+        "letter": "C",
+        "text": "6750; 12"
+      },
+      {
+        "letter": "D",
+        "text": "1125; 12"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "6750",
+    "type": "mcq"
+  },
+  {
+    "id": 23,
+    "text": "Ketma-ket kelgan 1 dan 40 gacha bo‘lgan sonlar ko‘paytmasi nechta nol bilan tugaydi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "8 ta"
+      },
+      {
+        "letter": "B",
+        "text": "9 ta"
+      },
+      {
+        "letter": "C",
+        "text": "10 ta"
+      },
+      {
+        "letter": "D",
+        "text": "4 ta"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "10",
+    "type": "mcq"
+  },
+  {
+    "id": 24,
+    "text": "Ko‘paytmani hisoblang:  \n\n\\[\n(1 − \\frac{1}{2})(1 − \\frac{1}{3})(1 − \\frac{1}{4})(1 − \\frac{1}{5})(1 − \\frac{1}{6})\n\\]",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{1}{2}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{1}{6}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{1}{12}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{1}{10}"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "12",
+    "type": "mcq"
+  },
+  {
+    "id": 25,
+    "text": "Olti ishchi ma’lum bir ishni 4 soatda bajaradi. Shu ishni 3 soatda bajarish uchun necha ishchi kerak?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "2"
+      },
+      {
+        "letter": "B",
+        "text": "3"
+      },
+      {
+        "letter": "C",
+        "text": "4"
+      },
+      {
+        "letter": "D",
+        "text": "8"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "3",
+    "type": "mcq"
+  },
+  {
+    "id": 26,
+    "text": "150 dan katta bo‘lmagan 6 ga karrali barcha sonlarning yig‘indisini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1800"
+      },
+      {
+        "letter": "B",
+        "text": "1760"
+      },
+      {
+        "letter": "C",
+        "text": "1950"
+      },
+      {
+        "letter": "D",
+        "text": "2025"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "1950",
+    "type": "mcq"
+  },
+  {
+    "id": 27,
+    "text": "\\(x = 30112,\\;y = 3,3 · 10^5,\\;z = 102588\\) sonlardan qaysilari 12 ga qoldiqsiz bo‘linadi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "faqat y"
+      },
+      {
+        "letter": "B",
+        "text": "faqat x"
+      },
+      {
+        "letter": "C",
+        "text": "y va z"
+      },
+      {
+        "letter": "D",
+        "text": "faqat z"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "y va z",
+    "type": "mcq"
+  },
+  {
+    "id": 28,
+    "text": "\\(7^6 + 27\\) soni quyidagilarning qaysi biriga qoldiqsiz bo‘linadi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "23"
+      },
+      {
+        "letter": "B",
+        "text": "49"
+      },
+      {
+        "letter": "C",
+        "text": "17"
+      },
+      {
+        "letter": "D",
+        "text": "13"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "23",
+    "type": "mcq"
+  },
+  {
+    "id": 29,
+    "text": "\\(30^{20}\\) ni 7 ga bo‘lgandagi qoldiqni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "2"
+      },
+      {
+        "letter": "B",
+        "text": "3"
+      },
+      {
+        "letter": "C",
+        "text": "1"
+      },
+      {
+        "letter": "D",
+        "text": "4"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "1",
+    "type": "mcq"
+  },
+  {
+    "id": 30,
+    "text": "26 ning barcha bo‘luvchilarining yig‘indisini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "16"
+      },
+      {
+        "letter": "B",
+        "text": "41"
+      },
+      {
+        "letter": "C",
+        "text": "42"
+      },
+      {
+        "letter": "D",
+        "text": "43"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "42",
+    "type": "mcq"
+  },
+  {
+    "id": 31,
+    "text": "\\(a\\) va \\(b\\) sonlari toq va \\(a > b\\) ekanligi ma’lum bo‘lsa, quyidagilardan qaysi biri toq son bo‘ladi?  \n1) \\(a − b\\); 2) \\(ab\\); 3) \\(a + 2b\\).",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1 va 2"
+      },
+      {
+        "letter": "B",
+        "text": "2 va 3"
+      },
+      {
+        "letter": "C",
+        "text": "1"
+      },
+      {
+        "letter": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "1",
+    "type": "mcq"
+  },
+  {
+    "id": 32,
+    "text": "Quyidagilarning qaysi biri 15 ga bo‘linmaydi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "6525"
+      },
+      {
+        "letter": "B",
+        "text": "3105"
+      },
+      {
+        "letter": "C",
+        "text": "4620"
+      },
+      {
+        "letter": "D",
+        "text": "6145"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "3105",
+    "type": "mcq"
+  },
+  {
+    "id": 33,
+    "text": "\\(\\frac{1}{4} < \\frac{b}{20} < \\frac{3}{5}\\) ni qanoatlantiruvchi \\(b\\) ning nechta natural qiymati mavjud?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "7"
+      },
+      {
+        "letter": "B",
+        "text": "6"
+      },
+      {
+        "letter": "C",
+        "text": "bunday sonlar yo‘q"
+      },
+      {
+        "letter": "D",
+        "text": "8"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "8",
+    "type": "mcq"
+  },
+  {
+    "id": 34,
+    "text": "62 ning 0,75 qismina 185 ning 0,4 qismini qo‘shing.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "120,5"
+      },
+      {
+        "letter": "B",
+        "text": "121,5"
+      },
+      {
+        "letter": "C",
+        "text": "83,5"
+      },
+      {
+        "letter": "D",
+        "text": "46,5"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "121.5",
+    "type": "mcq"
+  },
+  {
+    "id": 35,
+    "text": "\\(\\frac{3}{5}\\) va bu songa teskari bo‘lgan sonning yig‘indisini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{15}{4}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{4}{15}"
+      },
+      {
+        "letter": "C",
+        "text": "1"
+      },
+      {
+        "letter": "D",
+        "text": "5"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "154",
+    "type": "mcq"
+  },
+  {
+    "id": 36,
+    "text": "Radiusi 3 sm bo‘lgan aylananing uzunligini toping. Natijani o‘ndan birlar xonasigacha yaxlitlang. Bunda \\(\\pi ≈ 3,14\\).",
+    "options": [
+      {
+        "letter": "A",
+        "text": "18,84 sm"
+      },
+      {
+        "letter": "B",
+        "text": "37,6 sm"
+      },
+      {
+        "letter": "C",
+        "text": "18,8 sm"
+      },
+      {
+        "letter": "D",
+        "text": "30,5 sm"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "37.6",
+    "type": "mcq"
+  },
+  {
+    "id": 37,
+    "text": "Son nurida −16 va 19 sonlari orasida nechta butun son joylashgan?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "35"
+      },
+      {
+        "letter": "B",
+        "text": "33"
+      },
+      {
+        "letter": "C",
+        "text": "34"
+      },
+      {
+        "letter": "D",
+        "text": "32"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "34",
+    "type": "mcq"
+  },
+  {
+    "id": 38,
+    "text": "To‘g‘ri to‘rtburchakning eni 15,5 sm, bo‘yi enining 0,8 qismini tashkil qiladi.  \nTo‘g‘ri to‘rtburchakning perimetrini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "54,8 sm"
+      },
+      {
+        "letter": "B",
+        "text": "55,6 sm"
+      },
+      {
+        "letter": "C",
+        "text": "54,3 sm"
+      },
+      {
+        "letter": "D",
+        "text": "55,8 sm"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "55.8",
+    "type": "mcq"
+  },
+  {
+    "id": 39,
+    "text": "Sayyoh mo‘ljallangan yo‘lining 36 % ini o‘tqach, hisoblab ko‘rsa, yo‘lining yarmini o‘tishi uchun yana 7 km yurishi kerak ekan. Mo‘ljallangan yo‘l necha kilometr?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "50 km"
+      },
+      {
+        "letter": "B",
+        "text": "70 km"
+      },
+      {
+        "letter": "C",
+        "text": "115 km"
+      },
+      {
+        "letter": "D",
+        "text": "87,5 km"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "50",
+    "type": "mcq"
+  },
+  {
+    "id": 40,
+    "text": "Bitta qovunning massasi \\(\\frac{5}{8}\\) kg, ikkinchi qovunniki esa undan \\(\\frac{1}{4}\\) kg kam.  \nIkkala qovunning birgalikdagi massasi qancha?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{7}{8} kg"
+      },
+      {
+        "letter": "B",
+        "text": "1 kg"
+      },
+      {
+        "letter": "C",
+        "text": "frac{2}{8} kg"
+      },
+      {
+        "letter": "D",
+        "text": "2 kg"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "1",
+    "type": "mcq"
+  },
+  {
+    "id": 41,
+    "text": "O‘lchamlari \\(1 \\frac{1}{4}\\) dm, \\(2 \\frac{2}{5}\\) dm, \\(1 \\frac{4}{5}\\) dm bo‘lgan to‘g‘ri burchakli parallelepipedning hajmini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "27 dm²"
+      },
+      {
+        "letter": "B",
+        "text": "27 dm³"
+      },
+      {
+        "letter": "C",
+        "text": "9 m³"
+      },
+      {
+        "letter": "D",
+        "text": "54 m³"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "27",
+    "type": "mcq"
+  },
+  {
+    "id": 42,
+    "text": "Agar \\(a = 5\\) bo‘lsa, \\(\\frac{7}{4} − (a − 2 − \\frac{7}{10})\\) ifodaning qiymatini hisoblang.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{19}{20}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{4}{20}"
+      },
+      {
+        "letter": "C",
+        "text": "3 \\frac{1}{2}"
+      },
+      {
+        "letter": "D",
+        "text": "1"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "420",
+    "type": "mcq"
+  },
+  {
+    "id": 43,
+    "text": "Ifodani soddalashtiring: \\(\\frac{3}{x} + \\frac{9}{7x}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{30}{7x^2}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{6}{7x}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{30}{7x}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{6}{7x^2}"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "307",
+    "type": "mcq"
+  },
+  {
+    "id": 44,
+    "text": "Tenglamani yeching: \\((-y + 2,92) : 1,6 = 0,3 + 1,4 · 5\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "8,76"
+      },
+      {
+        "letter": "B",
+        "text": "11,68"
+      },
+      {
+        "letter": "C",
+        "text": "−8,76"
+      },
+      {
+        "letter": "D",
+        "text": "7,3"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "8.76",
+    "type": "mcq"
+  },
+  {
+    "id": 45,
+    "text": "Quyidagi oddiy kasrlarning qaysi birini chekli o‘nli kasr ko‘rinishida ifodalab bo‘lmaydi?  \n\\(\\frac{16}{25}, \\frac{3}{50}, \\frac{49}{56}, \\frac{14}{21}, \\frac{12}{48}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{49}{56}, \\frac{14}{21}, \\frac{12}{48}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{16}{25}, \\frac{49}{56}, \\frac{14}{21}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{16}{25}, \\frac{3}{50}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{14}{21}"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "1625.",
+    "type": "mcq"
+  },
+  {
+    "id": 46,
+    "text": "Amallarni bajaring: \\(1,3 \\cdot 9,7 − 5,8 \\cdot 1,3\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "5,07"
+      },
+      {
+        "letter": "B",
+        "text": "5,7"
+      },
+      {
+        "letter": "C",
+        "text": "7,54"
+      },
+      {
+        "letter": "D",
+        "text": "12,61"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "5.07",
+    "type": "mcq"
+  },
+  {
+    "id": 47,
+    "text": "Tarvuzning 76 % i suvdan iborat bo‘lsa, 24 kg tarvuzning quruq qismi qancha?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "18,24 kg"
+      },
+      {
+        "letter": "B",
+        "text": "5,76 kg"
+      },
+      {
+        "letter": "C",
+        "text": "12,48 kg"
+      },
+      {
+        "letter": "D",
+        "text": "4,56 kg"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "5.76",
+    "type": "mcq"
+  },
+  {
+    "id": 48,
+    "text": "Moduli 11 dan katta, ammo 23 dan kichik bo‘lgan butun sonlar nechta?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "11 ta"
+      },
+      {
+        "letter": "B",
+        "text": "12 ta"
+      },
+      {
+        "letter": "C",
+        "text": "22 ta"
+      },
+      {
+        "letter": "D",
+        "text": "21 ta"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "22",
+    "type": "mcq"
+  },
+  {
+    "id": 49,
+    "text": "Uchburchakning bir tomoni 8,9 sm, ikkinchi tomoni undan 1,8 sm qisqa, uchinchi tomoni esa birinchisidan 3,6 sm uzun. Uchburchakning perimetrini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "19,6 sm"
+      },
+      {
+        "letter": "B",
+        "text": "28,5 sm"
+      },
+      {
+        "letter": "C",
+        "text": "12,5 sm"
+      },
+      {
+        "letter": "D",
+        "text": "16 sm"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "28.5",
+    "type": "mcq"
+  },
+  {
+    "id": 50,
+    "text": "Kasr ifodaning qiymatini toping:  \n\n\\[\n\\frac{1}{2 + \\frac{1}{3 + \\frac{1}{1 + \\frac{1}{2}}}}\n\\]",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{2}{3}"
+      },
+      {
+        "letter": "B",
+        "text": "3 \\frac{2}{3}"
+      },
+      {
+        "letter": "C",
+        "text": "2 \\frac{4}{11}"
+      },
+      {
+        "letter": "D",
+        "text": "0,44"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "0.44",
+    "type": "mcq"
+  },
+  {
+    "id": 51,
+    "text": "27 sonining barcha bo‘luvchilari yig‘indisining shu bo‘luvchilar soniga ko‘paytmasini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "40"
+      },
+      {
+        "letter": "B",
+        "text": "164"
+      },
+      {
+        "letter": "C",
+        "text": "156"
+      },
+      {
+        "letter": "D",
+        "text": "160"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "160",
+    "type": "mcq"
+  },
+  {
+    "id": 52,
+    "text": "\\(a\\) va \\(b\\) sonlari toq va \\(a > b\\) ekanligi ma’lum bo‘lsa, quyidagilardan qaysi biri juft son bo‘ladi?  \n1) \\(3a − b\\); 2) \\(ab + 1\\); 3) \\(2a + b\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1"
+      },
+      {
+        "letter": "B",
+        "text": "2 va 3"
+      },
+      {
+        "letter": "C",
+        "text": "1 va 2"
+      },
+      {
+        "letter": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "3",
+    "type": "mcq"
+  },
+  {
+    "id": 53,
+    "text": "Quyidagilarning qaysi biri 6 ga bo‘linmaydi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "9216"
+      },
+      {
+        "letter": "B",
+        "text": "136261"
+      },
+      {
+        "letter": "C",
+        "text": "12024"
+      },
+      {
+        "letter": "D",
+        "text": "18312"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "12024",
+    "type": "mcq"
+  },
+  {
+    "id": 54,
+    "text": "16 dan katta, 25 dan kichik bo‘lgan murakkab sonlar yig‘indisini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "97"
+      },
+      {
+        "letter": "B",
+        "text": "121"
+      },
+      {
+        "letter": "C",
+        "text": "110"
+      },
+      {
+        "letter": "D",
+        "text": "105"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "121",
+    "type": "mcq"
+  },
+  {
+    "id": 55,
+    "text": "EKUB(180; 540; 710) ni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "18"
+      },
+      {
+        "letter": "B",
+        "text": "10"
+      },
+      {
+        "letter": "C",
+        "text": "25"
+      },
+      {
+        "letter": "D",
+        "text": "30"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "30",
+    "type": "mcq"
+  },
+  {
+    "id": 56,
+    "text": "224 ning \\(\\frac{5}{7}\\) qismidan 142 ning \\(\\frac{1}{8}\\) qismini ayiring.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "142,25"
+      },
+      {
+        "letter": "B",
+        "text": "177,75"
+      },
+      {
+        "letter": "C",
+        "text": "141,75"
+      },
+      {
+        "letter": "D",
+        "text": "160"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "142.25",
+    "type": "mcq"
+  },
+  {
+    "id": 57,
+    "text": "\\(\\frac{1}{3}\\) sonidan bu songa teskari bo‘lgan sonni ayiring.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{16}{21}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{17}{21}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{19}{21}"
+      },
+      {
+        "letter": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "1921",
+    "type": "mcq"
+  },
+  {
+    "id": 58,
+    "text": "Sutning 21 % i dan qaymoq olinadi, qaymoqning 25 % i dan sariyog‘ olinadi.  \n105 kg sariyog‘ olish uchun qancha sut kerak bo‘ladi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "400 kg"
+      },
+      {
+        "letter": "B",
+        "text": "1000 kg"
+      },
+      {
+        "letter": "C",
+        "text": "2000 kg"
+      },
+      {
+        "letter": "D",
+        "text": "200 kg"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "2000",
+    "type": "mcq"
+  },
+  {
+    "id": 59,
+    "text": "Koordinata to‘g‘ri chizig‘ida −14 va 11 sonlari orasida nechta birlik kesma joylashgan?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "26"
+      },
+      {
+        "letter": "B",
+        "text": "24"
+      },
+      {
+        "letter": "C",
+        "text": "22"
+      },
+      {
+        "letter": "D",
+        "text": "25"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "25",
+    "type": "mcq"
+  },
+  {
+    "id": 60,
+    "text": "To‘g‘ri to‘rtburchakning eni 10,2 sm, bo‘yi enidan \\(1 \\frac{1}{3}\\) marta katta. To‘g‘ri to‘rtburchakning yuzini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "34,2 sm²"
+      },
+      {
+        "letter": "B",
+        "text": "3,428 sm²"
+      },
+      {
+        "letter": "C",
+        "text": "343,9 sm²"
+      },
+      {
+        "letter": "D",
+        "text": "138,72 sm²"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "138.72",
+    "type": "mcq"
+  },
+  {
+    "id": 61,
+    "text": "Tenglamani yeching: \\(\\frac{5}{13} = \\frac{x + 4}{52}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "12"
+      },
+      {
+        "letter": "B",
+        "text": "24"
+      },
+      {
+        "letter": "C",
+        "text": "16"
+      },
+      {
+        "letter": "D",
+        "text": "17"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "17",
+    "type": "mcq"
+  },
+  {
+    "id": 62,
+    "text": "Tenglamani yeching: \\(\\frac{1}{2}\\left(\\frac{4}{5}x + 2\\right) − \\frac{2}{3}\\left(\\frac{3}{7}(x − 6)\\right) = 20\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "2"
+      },
+      {
+        "letter": "B",
+        "text": "1"
+      },
+      {
+        "letter": "C",
+        "text": "3"
+      },
+      {
+        "letter": "D",
+        "text": "19"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "19",
+    "type": "mcq"
+  },
+  {
+    "id": 63,
+    "text": "Bog‘ 80 ga maydonni egallagan. Olma daraxti bog‘ maydonining 58,5 % ini, o‘rik daraxtlari esa bog‘ maydonining 39 % ini tashkil qiladi. O‘rik daraxtlari egallagan maydon, olma daraxtlari egallagan maydondan necha gektar kam?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "16,5"
+      },
+      {
+        "letter": "B",
+        "text": "17,6"
+      },
+      {
+        "letter": "C",
+        "text": "1,56"
+      },
+      {
+        "letter": "D",
+        "text": "15,6"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "17.6",
+    "type": "mcq"
+  },
+  {
+    "id": 64,
+    "text": "1,8 ning \\(2 \\frac{2}{9}\\) qismini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "4"
+      },
+      {
+        "letter": "B",
+        "text": "3"
+      },
+      {
+        "letter": "C",
+        "text": "2"
+      },
+      {
+        "letter": "D",
+        "text": "5"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "5",
+    "type": "mcq"
+  },
+  {
+    "id": 65,
+    "text": "Ifodani soddalashtiring: \\(\\frac{9}{5m} + \\frac{7}{m}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{9}{5m^2}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{44}{5m}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{44}{5m^2}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{2}{5m}"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "95",
+    "type": "mcq"
+  },
+  {
+    "id": 66,
+    "text": "Sonlarning qaysi biri eng katta?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "10:0,001100"
+      },
+      {
+        "letter": "B",
+        "text": "100:0,01"
+      },
+      {
+        "letter": "C",
+        "text": "1,0:0,110000"
+      },
+      {
+        "letter": "D",
+        "text": "100000:10"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "100",
+    "type": "mcq"
+  },
+  {
+    "id": 67,
+    "text": "Xaritaning masshtabi 1:3000000. A va B shaharlar orasidagi masofa xaritada 4,3 sm. Bu shaharlar orasidagi haqiqiy masofa necha kilometr?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "109 km"
+      },
+      {
+        "letter": "B",
+        "text": "139 km"
+      },
+      {
+        "letter": "C",
+        "text": "129 km"
+      },
+      {
+        "letter": "D",
+        "text": "119 km"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "119",
+    "type": "mcq"
+  },
+  {
+    "id": 68,
+    "text": "Yog‘och 7:4:5 nisbatda uch bo‘lakka ajratildi. Eng katta bo‘lakning yog‘och uzunligiga nisbatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "7:9"
+      },
+      {
+        "letter": "B",
+        "text": "7:11"
+      },
+      {
+        "letter": "C",
+        "text": "7:16"
+      },
+      {
+        "letter": "D",
+        "text": "7:12"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "7",
+    "type": "mcq"
+  },
+  {
+    "id": 69,
+    "text": "Tenglamani yeching: \\((0,875 − 0,7) : (5 \\frac{2}{7} − x) = 0,1\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{89}{28}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{99}{28}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{79}{28}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{59}{28}"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "7928",
+    "type": "mcq"
+  },
+  {
+    "id": 70,
+    "text": "Ifodaning qiymatini toping: \\((\\frac{3}{4} − 1,25)(0,3 − \\frac{1}{20})\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "−2"
+      },
+      {
+        "letter": "B",
+        "text": "2"
+      },
+      {
+        "letter": "C",
+        "text": "1"
+      },
+      {
+        "letter": "D",
+        "text": "−3"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "2",
+    "type": "mcq"
+  },
+  {
+    "id": 71,
+    "text": "Birinchi doiraning radiusi 6,3 sm, ikkinchisining diametri esa 21 sm. Birinchi doira yuzining ikkinchi doira yuziga nisbatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "0,64"
+      },
+      {
+        "letter": "B",
+        "text": "0,49"
+      },
+      {
+        "letter": "C",
+        "text": "0,36"
+      },
+      {
+        "letter": "D",
+        "text": "1,44"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "0.64",
+    "type": "mcq"
+  },
+  {
+    "id": 72,
+    "text": "16 % li tuzli eritmaning 15 kg ida qancha suv bor?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "12,6 kg"
+      },
+      {
+        "letter": "B",
+        "text": "2,4 kg"
+      },
+      {
+        "letter": "C",
+        "text": "11,4 kg"
+      },
+      {
+        "letter": "D",
+        "text": "13,6 kg"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "11.4",
+    "type": "mcq"
+  },
+  {
+    "id": 73,
+    "text": "Moduli 14 dan katta, ammo 25 dan kichik bo‘lgan butun manfiy sonlar nechta?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "20"
+      },
+      {
+        "letter": "B",
+        "text": "10"
+      },
+      {
+        "letter": "C",
+        "text": "9"
+      },
+      {
+        "letter": "D",
+        "text": "11"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "20",
+    "type": "mcq"
+  },
+  {
+    "id": 74,
+    "text": "C nuqta AB kesmani ikkita AC va CB kesmalarga ajratadi. AC kesma CB kesmadan \\(1 \\frac{1}{6}\\) marta katta. Agar AB = 7,8 sm bo‘lsa, AC va CB kesmalarning uzunliklarini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "4,2 sm; 3,6 sm"
+      },
+      {
+        "letter": "B",
+        "text": "4,6 sm; 3,2 sm"
+      },
+      {
+        "letter": "C",
+        "text": "4,8 sm; 3 sm"
+      },
+      {
+        "letter": "D",
+        "text": "4 sm; 3,8 sm"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "4.6",
+    "type": "mcq"
+  },
+  {
+    "id": 75,
+    "text": "7 ta sonning o‘rta arifmetigi 13 ga teng. Bu sonlarga qaysi son qo‘shilsa, ularning o‘rta arifmetigi 18 ga teng bo‘ladi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "43"
+      },
+      {
+        "letter": "B",
+        "text": "63"
+      },
+      {
+        "letter": "C",
+        "text": "35"
+      },
+      {
+        "letter": "D",
+        "text": "53"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "43",
+    "type": "mcq"
+  },
+  {
+    "id": 76,
+    "text": "5 ishchi 3 kunda 60 ta detal tayyorlaydi. 7 ishchi 8 kunda nechta detal tayyorlaydi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "210"
+      },
+      {
+        "letter": "B",
+        "text": "224"
+      },
+      {
+        "letter": "C",
+        "text": "154"
+      },
+      {
+        "letter": "D",
+        "text": "424"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "224",
+    "type": "mcq"
+  },
+  {
+    "id": 77,
+    "text": "Kutubxonadagi kitoblarning 0,4 qismi darsliklar. Bu ulushni foizlarda ifodalang.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "4%"
+      },
+      {
+        "letter": "B",
+        "text": "40%"
+      },
+      {
+        "letter": "C",
+        "text": "0,5%"
+      },
+      {
+        "letter": "D",
+        "text": "0,4%"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "40",
+    "type": "mcq"
+  },
+  {
+    "id": 78,
+    "text": "Ikkita punktdan bir-biriga qarab ikki velosipedchi yo‘lga chiqdi. Ular 2 soatdan keyin uchrashdilar. Agar velosipedchilardan birining tezligi 12 km/soat, ikkinchisiniki 10 km/soat bo‘lsa, ikki punkt orasidagi masofani toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "4 km"
+      },
+      {
+        "letter": "B",
+        "text": "11 km"
+      },
+      {
+        "letter": "C",
+        "text": "22 km"
+      },
+      {
+        "letter": "D",
+        "text": "44 km"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "44",
+    "type": "mcq"
+  },
+  {
+    "id": 79,
+    "text": "1, 2, 3, 4 raqamlardan nechta turli ikki xonali sonlarni hosil qilish mumkin? Bunda har bir raqam sonda bir marta qatnashishi kerak.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "8"
+      },
+      {
+        "letter": "B",
+        "text": "12"
+      },
+      {
+        "letter": "C",
+        "text": "16"
+      },
+      {
+        "letter": "D",
+        "text": "16"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "16",
+    "type": "mcq"
+  },
+  {
+    "id": 80,
+    "text": "Hisoblang:  \n\n\\[\n\\frac{3}{1 \\cdot 2} + \\frac{3}{2 \\cdot 3} + \\frac{3}{3 \\cdot 4} + \\ldots + \\frac{3}{9 \\cdot 10}\n\\]",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{13}{90}"
+      },
+      {
+        "letter": "B",
+        "text": "1,5"
+      },
+      {
+        "letter": "C",
+        "text": "2,9"
+      },
+      {
+        "letter": "D",
+        "text": "2,7"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "1.5",
+    "type": "mcq"
+  },
+  {
+    "id": 81,
+    "text": "Tenglamani yeching: \\((2x + 3) − 1,5 = −2,5\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "2"
+      },
+      {
+        "letter": "B",
+        "text": "−2"
+      },
+      {
+        "letter": "C",
+        "text": "1"
+      },
+      {
+        "letter": "D",
+        "text": "−1"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "2",
+    "type": "mcq"
+  },
+  {
+    "id": 82,
+    "text": "321 va 432 sonlarining eng katta umumiy bo‘luvchisini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "64"
+      },
+      {
+        "letter": "B",
+        "text": "108"
+      },
+      {
+        "letter": "C",
+        "text": "124"
+      },
+      {
+        "letter": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "3",
+    "type": "mcq"
+  },
+  {
+    "id": 83,
+    "text": "\\(EKUK(a; b) = 420,\\ EKUB(a; b) = 6\\) bo‘lsa, \\(a \\cdot b\\) ni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "2520"
+      },
+      {
+        "letter": "B",
+        "text": "70"
+      },
+      {
+        "letter": "C",
+        "text": "2420"
+      },
+      {
+        "letter": "D",
+        "text": "80"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "80",
+    "type": "mcq"
+  },
+  {
+    "id": 84,
+    "text": "Agar \\(k = \\frac{17}{31} + \\frac{27}{41} + \\frac{37}{51}\\) bo‘lsa, \\(\\frac{14}{31} + \\frac{14}{41} + \\frac{14}{51}\\) ni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "2 + k"
+      },
+      {
+        "letter": "B",
+        "text": "3 + k"
+      },
+      {
+        "letter": "C",
+        "text": "3 − k"
+      },
+      {
+        "letter": "D",
+        "text": "4 + k"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "2",
+    "type": "mcq"
+  },
+  {
+    "id": 85,
+    "text": "Amalni bajaring, natijaga teskari sonni toping: \\(4 \\frac{3}{8} − 2,8\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{40}{23}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{40}{63}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{40}{53}"
+      },
+      {
+        "letter": "D",
+        "text": "1 \\frac{23}{40}"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "4053",
+    "type": "mcq"
+  },
+  {
+    "id": 86,
+    "text": "969 ning \\(\\frac{11}{17}\\) qismini 484 ning \\(\\frac{4}{11}\\) qismiga bo‘ling.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{19}{34}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{15}{16}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{9}{16}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{2}{7}"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "916",
+    "type": "mcq"
+  },
+  {
+    "id": 87,
+    "text": "Tenglamani yeching: \\(\\frac{3}{2x − 1} = \\frac{1}{4}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "6,5"
+      },
+      {
+        "letter": "B",
+        "text": "7,5"
+      },
+      {
+        "letter": "C",
+        "text": "5,5"
+      },
+      {
+        "letter": "D",
+        "text": "6"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "5.5",
+    "type": "mcq"
+  },
+  {
+    "id": 88,
+    "text": "Ifodaning qiymatini toping:  \n\n\\[\n(1 − \\frac{1}{2})(1 − \\frac{1}{3})(1 − \\frac{1}{4})(1 − \\frac{1}{5})(1 − \\frac{1}{6})(1 − \\frac{1}{7})\n\\]",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{1}{7}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{1}{5}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{1}{8}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{3}{47}"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "17",
+    "type": "mcq"
+  },
+  {
+    "id": 89,
+    "text": "Sayyoh 4,5 km/soat tezlik bilan 3,2 soat yurdi. Shu masofani 2,4 soatda bosib o‘tishi uchun qanday tezlik bilan yurishi kerak?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "5 km/soat"
+      },
+      {
+        "letter": "B",
+        "text": "6 km/soat"
+      },
+      {
+        "letter": "C",
+        "text": "6,5 km/soat"
+      },
+      {
+        "letter": "D",
+        "text": "5,5 km/soat"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "6",
+    "type": "mcq"
+  },
+  {
+    "id": 90,
+    "text": "1:300 masshtabli planda to‘g‘ri to‘rtburchak shaklidagi bog‘ning o‘lchamlari 60 sm va 70 sm. Bog‘ning yuzini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3,78 ga"
+      },
+      {
+        "letter": "B",
+        "text": "37,8 ga"
+      },
+      {
+        "letter": "C",
+        "text": "378 ga"
+      },
+      {
+        "letter": "D",
+        "text": "0,378 ga"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "0.378",
+    "type": "mcq"
+  },
+  {
+    "id": 91,
+    "text": "Teng yonli uchburchakning asosi 31,5 sm, yon tomon asosidan \\(2 \\frac{1}{7}\\) marta kichik. Uchburchakning perimetrini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "55,6 sm"
+      },
+      {
+        "letter": "B",
+        "text": "50,8 sm"
+      },
+      {
+        "letter": "C",
+        "text": "60,9 sm"
+      },
+      {
+        "letter": "D",
+        "text": "6,09 sm"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "55.6",
+    "type": "mcq"
+  },
+  {
+    "id": 92,
+    "text": "Hajmi 40 sm³ bo‘lgan metalning massasi 4640 gramm. Agar shu metalning hajmi 15 sm³ bo‘lsa, uning massasi necha gramm bo‘ladi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "174"
+      },
+      {
+        "letter": "B",
+        "text": "2145"
+      },
+      {
+        "letter": "C",
+        "text": "1740"
+      },
+      {
+        "letter": "D",
+        "text": "2345"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "174",
+    "type": "mcq"
+  },
+  {
+    "id": 93,
+    "text": "Birinchi kubning qirrasi 5 sm, ikkinchi kubning qirrasi undan 2 marta katta. Kublarning hajmlari nisbatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{1}{8}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{1}{6}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{1}{4}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{1}{3}"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "14",
+    "type": "mcq"
+  },
+  {
+    "id": 94,
+    "text": "Ushbu \\(10 − \\frac{6}{5 − \\frac{16}{x}} = 8\\) tenglamaning yechimi 10 dan qancha kam?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3"
+      },
+      {
+        "letter": "B",
+        "text": "7"
+      },
+      {
+        "letter": "C",
+        "text": "5"
+      },
+      {
+        "letter": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "3",
+    "type": "mcq"
+  },
+  {
+    "id": 95,
+    "text": "\\(x − a = 2,3\\) tenglamaning yechimi butun son bo‘lib, u −1,5 va 4,3 sonlari orasida joylashgan bo‘lsa, \\(a\\) nechta qiymat qabul qilishi mumkin?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "5"
+      },
+      {
+        "letter": "B",
+        "text": "6"
+      },
+      {
+        "letter": "C",
+        "text": "4"
+      },
+      {
+        "letter": "D",
+        "text": "7"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "7",
+    "type": "mcq"
+  },
+  {
+    "id": 96,
+    "text": "Agar \\(a = 2 \\frac{5}{6}, b = −1 \\frac{1}{6}, c = −3 \\frac{4}{15}\\) bo‘lsa, \\(a + b − c\\) ifodaning son qiymatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{14}{15}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{3}{4}"
+      },
+      {
+        "letter": "C",
+        "text": "2 \\frac{1}{3}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{2}{3}"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "1415",
+    "type": "mcq"
+  },
+  {
+    "id": 97,
+    "text": "\\(M(−3 \\frac{1}{3})\\) va \\(N(−7 \\frac{8}{9})\\) nuqtalar orasidagi masofani toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{4}{9}"
+      },
+      {
+        "letter": "B",
+        "text": "3 \\frac{7}{9}"
+      },
+      {
+        "letter": "C",
+        "text": "4 \\frac{5}{9}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{5}{9}"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "49",
+    "type": "mcq"
+  },
+  {
+    "id": 98,
+    "text": "\\(-5 \\frac{7}{8}\\) va \\(7 \\frac{9}{11}\\) sonlari orasida nechta butun son joylashgan?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "12"
+      },
+      {
+        "letter": "B",
+        "text": "13"
+      },
+      {
+        "letter": "C",
+        "text": "11"
+      },
+      {
+        "letter": "D",
+        "text": "10"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "13",
+    "type": "mcq"
+  },
+  {
+    "id": 99,
+    "text": "Tenglamani yeching: \\(|x − 1| = 5\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "6"
+      },
+      {
+        "letter": "B",
+        "text": "−4"
+      },
+      {
+        "letter": "C",
+        "text": "6 va 4"
+      },
+      {
+        "letter": "D",
+        "text": "−4 va 6"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "4",
+    "type": "mcq"
+  },
+  {
+    "id": 100,
+    "text": "Uchburchakning bir burchagi 40°, ikkinchisi undan 1,5 marta katta. Uchburchakning uchinchi burchagini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "60°"
+      },
+      {
+        "letter": "B",
+        "text": "80°"
+      },
+      {
+        "letter": "C",
+        "text": "100°"
+      },
+      {
+        "letter": "D",
+        "text": "90°"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "80",
+    "type": "mcq"
+  },
+  {
+    "id": 101,
+    "text": "To‘g‘ri burchakli parallelepipeding bir uchidan chiquvchi qirralari 12,8 sm, 6,5 sm va 11,5 sm. Parallelepipeding hamma qirralarining uzunliklari yig‘indisini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "30,8 sm"
+      },
+      {
+        "letter": "B",
+        "text": "61,6 sm"
+      },
+      {
+        "letter": "C",
+        "text": "92,4 sm"
+      },
+      {
+        "letter": "D",
+        "text": "123,2 sm"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "61.6",
+    "type": "mcq"
+  },
+  {
+    "id": 102,
+    "text": "To‘g‘ri to‘rtburchak qo‘shni tomonlarining uzunligi 3:5 kabi nisbatda. Ularning ayirmasi 8 sm bo‘lsa, to‘g‘ri to‘rtburchakning perimetrini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "4 sm"
+      },
+      {
+        "letter": "B",
+        "text": "8 sm"
+      },
+      {
+        "letter": "C",
+        "text": "32 sm"
+      },
+      {
+        "letter": "D",
+        "text": "64 sm"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "64",
+    "type": "mcq"
+  },
+  {
+    "id": 103,
+    "text": "\\(2 − 1 + 3 − 2 + 4 − 3 + … + 100 − 99 = A\\) bo‘lsa, \\(A − 99\\) ni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1"
+      },
+      {
+        "letter": "B",
+        "text": "−1"
+      },
+      {
+        "letter": "C",
+        "text": "0"
+      },
+      {
+        "letter": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "2",
+    "type": "mcq"
+  },
+  {
+    "id": 104,
+    "text": "\\(x + x + x + … + x = 26\\) bunda, \\(x\\) lar soni \\(y\\) ta. Agar \\(x\\) va \\(y\\) lar natural sonlar va \\(x > 1\\) bo‘lsa, \\(y\\) ning eng katta qiymatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "26"
+      },
+      {
+        "letter": "B",
+        "text": "13"
+      },
+      {
+        "letter": "C",
+        "text": "2"
+      },
+      {
+        "letter": "D",
+        "text": "1"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "2",
+    "type": "mcq"
+  },
+  {
+    "id": 105,
+    "text": "* * * * = 106 bo‘lsa, * o‘rniga qo‘yilgan raqamlar yig‘indisi nimaga teng?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "75"
+      },
+      {
+        "letter": "B",
+        "text": "66"
+      },
+      {
+        "letter": "C",
+        "text": "57"
+      },
+      {
+        "letter": "D",
+        "text": "50"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "66",
+    "type": "mcq"
+  },
+  {
+    "id": 106,
+    "text": "4 ishchi 3 kunda 39 ta detal tayyorlaydi. 7 ishchi 8 kunda nechta detal tayyorlaydi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "172"
+      },
+      {
+        "letter": "B",
+        "text": "182"
+      },
+      {
+        "letter": "C",
+        "text": "152"
+      },
+      {
+        "letter": "D",
+        "text": "212"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "172",
+    "type": "mcq"
+  },
+  {
+    "id": 107,
+    "text": "Maktab o‘quvchilarining 30 % i bilan barcha o‘quvchilarning \\(\\frac{1}{4}\\) qismini taqqoslang.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "30 % < \\frac{1}{4}"
+      },
+      {
+        "letter": "B",
+        "text": "30 % > \\frac{1}{4}"
+      },
+      {
+        "letter": "C",
+        "text": "30 % = \\frac{1}{4}"
+      },
+      {
+        "letter": "D",
+        "text": "30 % ≤ \\frac{1}{4}"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "30",
+    "type": "mcq"
+  },
+  {
+    "id": 108,
+    "text": "Avtomobil yo‘ning 45 km ini bosib o‘tdi. Bu butun yo‘ning \\(\\frac{3}{5}\\) qismini tashkil qiladi. Butun yo‘lni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "15 km"
+      },
+      {
+        "letter": "B",
+        "text": "27 km"
+      },
+      {
+        "letter": "C",
+        "text": "75 km"
+      },
+      {
+        "letter": "D",
+        "text": "90 km"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "27",
+    "type": "mcq"
+  },
+  {
+    "id": 109,
+    "text": "Bir ishchi berilgan ishni 3 soatda bajaradi, ikkinchi ishchi esa shu ishni 6 soatda bajaradi. Ular birgalikda ishlasalar, bu ishni necha soatda bajaradilar?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "9 soat"
+      },
+      {
+        "letter": "B",
+        "text": "3 soat"
+      },
+      {
+        "letter": "C",
+        "text": "0,5 soat"
+      },
+      {
+        "letter": "D",
+        "text": "2 soat"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "2",
+    "type": "mcq"
+  },
+  {
+    "id": 110,
+    "text": "Hisoblang: \\(\\frac{4}{2} + \\frac{4}{6} + \\frac{4}{12} + ... + \\frac{4}{90}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3,5"
+      },
+      {
+        "letter": "B",
+        "text": "3 \\frac{2}{5}"
+      },
+      {
+        "letter": "C",
+        "text": "4 \\frac{1}{2}"
+      },
+      {
+        "letter": "D",
+        "text": "3,6"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "3.6",
+    "type": "mcq"
+  },
+  {
+    "id": 111,
+    "text": "Tenglamani yeching: \\(2,5 − (x + 4,5) = −1\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "−1"
+      },
+      {
+        "letter": "B",
+        "text": "−2"
+      },
+      {
+        "letter": "C",
+        "text": "−1,5"
+      },
+      {
+        "letter": "D",
+        "text": "−2,5"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "2.5",
+    "type": "mcq"
+  },
+  {
+    "id": 112,
+    "text": "102; 216 va 444 sonlarining eng katta umumiy bo‘luvchisini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "12"
+      },
+      {
+        "letter": "B",
+        "text": "18"
+      },
+      {
+        "letter": "C",
+        "text": "6"
+      },
+      {
+        "letter": "D",
+        "text": "3"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "12",
+    "type": "mcq"
+  },
+  {
+    "id": 113,
+    "text": "Yo‘ning haqiqiy uzunligi 3,2 km bo‘lib, xaritada u 4 sm ga teng. Xaritaning masshtabini aniqlang.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "80000:1"
+      },
+      {
+        "letter": "B",
+        "text": "1:8000"
+      },
+      {
+        "letter": "C",
+        "text": "1:80000"
+      },
+      {
+        "letter": "D",
+        "text": "1:800"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "1",
+    "type": "mcq"
+  },
+  {
+    "id": 114,
+    "text": "Agar \\(k = \\frac{15}{32} + \\frac{25}{42} + \\frac{25}{52} + \\frac{30}{62}\\) bo‘lsa, \\(\\frac{1}{32} + \\frac{1}{42} + \\frac{1}{52} + \\frac{1}{62}\\) ni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "2 + k"
+      },
+      {
+        "letter": "B",
+        "text": "3 + k"
+      },
+      {
+        "letter": "C",
+        "text": "3 − k"
+      },
+      {
+        "letter": "D",
+        "text": "2 − k"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "2",
+    "type": "mcq"
+  },
+  {
+    "id": 115,
+    "text": "Amalni bajarib, natijaga qarama-qarshi sonning teskarisini toping: \\(4,5 − 2 \\frac{1}{3}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{1}{6}"
+      },
+      {
+        "letter": "B",
+        "text": "−2 \\frac{1}{6}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{6}{13}"
+      },
+      {
+        "letter": "D",
+        "text": "−\\frac{6}{13}"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "613",
+    "type": "mcq"
+  },
+  {
+    "id": 116,
+    "text": "4800 ning \\(\\frac{5}{16}\\) qismidan 550 ning \\(\\frac{7}{11}\\) qismini ayiring.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1150"
+      },
+      {
+        "letter": "B",
+        "text": "1200"
+      },
+      {
+        "letter": "C",
+        "text": "1510"
+      },
+      {
+        "letter": "D",
+        "text": "1250"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "1250",
+    "type": "mcq"
+  },
+  {
+    "id": 117,
+    "text": "Tenglamani yeching: \\(\\frac{5 + x}{3x} = \\frac{1}{2}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "5,5"
+      },
+      {
+        "letter": "B",
+        "text": "5,6"
+      },
+      {
+        "letter": "C",
+        "text": "6,5"
+      },
+      {
+        "letter": "D",
+        "text": "10"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "5.5",
+    "type": "mcq"
+  },
+  {
+    "id": 118,
+    "text": "Ifodaning qiymatini toping:  \n\n\\[\n(1 − \\frac{1}{4})(1 − \\frac{1}{5})(1 − \\frac{1}{6})(1 − \\frac{1}{7})(1 − \\frac{1}{8})\n\\]",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{3}{8}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{15}{56}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{5}{8}"
+      },
+      {
+        "letter": "D",
+        "text": "frac{1}{8}"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "18",
+    "type": "mcq"
+  },
+  {
+    "id": 119,
+    "text": "Velosipedchi 12 km/soat tezlik bilan 5 soat yurdi. Shu masofani 3 soatda bosib o‘tishi uchun velosipedchi qanday tezlik bilan yurishi kerak?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "14 km/soat"
+      },
+      {
+        "letter": "B",
+        "text": "7,2 km/soat"
+      },
+      {
+        "letter": "C",
+        "text": "18 km/soat"
+      },
+      {
+        "letter": "D",
+        "text": "20 km/soat"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "14",
+    "type": "mcq"
+  },
+  {
+    "id": 120,
+    "text": "1:200 masshtabli planda to‘g‘ri to‘rtburchak shaklidagi bog‘ning o‘lchamlari 50 sm va 60 sm. Bog‘ning perimetrini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "220 m"
+      },
+      {
+        "letter": "B",
+        "text": "440 m"
+      },
+      {
+        "letter": "C",
+        "text": "110 m"
+      },
+      {
+        "letter": "D",
+        "text": "12000 m"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "440",
+    "type": "mcq"
+  },
+  {
+    "id": 121,
+    "text": "Teng yonli uchburchakning asosi 74,7 sm, yon tomon asosidan \\(1 \\frac{2}{7}\\) marta kichik. Uchburchakning yon tomonini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "58,1 sm"
+      },
+      {
+        "letter": "B",
+        "text": "180,1 sm"
+      },
+      {
+        "letter": "C",
+        "text": "190,9 sm"
+      },
+      {
+        "letter": "D",
+        "text": "180,9 sm"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "180.1",
+    "type": "mcq"
+  },
+  {
+    "id": 122,
+    "text": "Hajmi 30 sm³ bo‘lgan metalning massasi 186 gramm. Massasi 74,4 gramm bo‘lgan kubning hajmini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "16 sm³"
+      },
+      {
+        "letter": "B",
+        "text": "14 sm³"
+      },
+      {
+        "letter": "C",
+        "text": "12 sm³"
+      },
+      {
+        "letter": "D",
+        "text": "15 sm³"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "16",
+    "type": "mcq"
+  },
+  {
+    "id": 123,
+    "text": "Birinchi kubning qirrasi 4 sm, ikkinchi kubning qirrasi undan 3 marta katta. Kublarning sirti yuzlari nisbatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{1}{9}"
+      },
+      {
+        "letter": "B",
+        "text": "frac{1}{27}"
+      },
+      {
+        "letter": "C",
+        "text": "frac{1}{3}"
+      },
+      {
+        "letter": "D",
+        "text": "27"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "13",
+    "type": "mcq"
+  },
+  {
+    "id": 124,
+    "text": "\\(A(4), B(−2,3), C(−2,5), D(\\frac{1}{2}), E(\\frac{5}{6})\\) nuqtalar son o‘qida qanday tartibda joylashgan?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "C, B, E, D, A"
+      },
+      {
+        "letter": "B",
+        "text": "C, B, D, E, A"
+      },
+      {
+        "letter": "C",
+        "text": "B, C, E, D, A"
+      },
+      {
+        "letter": "D",
+        "text": "B, E, C, A, D"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "c, b, e, d, a",
+    "type": "mcq"
+  },
+  {
+    "id": 125,
+    "text": "150 grammning 1,5 kg ga nisbatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "0,01"
+      },
+      {
+        "letter": "B",
+        "text": "0,1"
+      },
+      {
+        "letter": "C",
+        "text": "1"
+      },
+      {
+        "letter": "D",
+        "text": "10"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "0.1",
+    "type": "mcq"
+  },
+  {
+    "id": 126,
+    "text": "Ifodaning qiymatini toping:  \n\n\\[\n2 + \\frac{2}{2 + \\frac{2}{2 + 2}}\n\\]",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3"
+      },
+      {
+        "letter": "B",
+        "text": "2,8"
+      },
+      {
+        "letter": "C",
+        "text": "2,4"
+      },
+      {
+        "letter": "D",
+        "text": "2 \\frac{2}{3}"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "2.8",
+    "type": "mcq"
+  },
+  {
+    "id": 127,
+    "text": "Ifodaning qiymatini toping:  \n\n\\[\n\\frac{0,7 \\cdot 1,8 \\cdot 2,6}{7,2 \\cdot 0,78 \\cdot 1,4}\n\\]",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{1}{24}"
+      },
+      {
+        "letter": "B",
+        "text": "2,4"
+      },
+      {
+        "letter": "C",
+        "text": "frac{5}{12}"
+      },
+      {
+        "letter": "D",
+        "text": "24"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "2.4",
+    "type": "mcq"
+  },
+  {
+    "id": 128,
+    "text": "Proportsiyaning noma’lum hadini toping: \\(7,5 : 3,5 = x : 14\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "35"
+      },
+      {
+        "letter": "B",
+        "text": "30"
+      },
+      {
+        "letter": "C",
+        "text": "2,1"
+      },
+      {
+        "letter": "D",
+        "text": "49"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "2.1",
+    "type": "mcq"
+  },
+  {
+    "id": 129,
+    "text": "Tenglamani yeching: \\(2 \\cdot |x − 2| + 3 = 7\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "4"
+      },
+      {
+        "letter": "B",
+        "text": "4 va 0"
+      },
+      {
+        "letter": "C",
+        "text": "0"
+      },
+      {
+        "letter": "D",
+        "text": "2"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "2",
+    "type": "mcq"
+  },
+  {
+    "id": 130,
+    "text": "Uchburchakning bir burchagi ikkinchisidan 2 marta kichik, uchinchisidan esa 6 marta kichik bo‘lsa, uchburchakning kichik burchagini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "20°"
+      },
+      {
+        "letter": "B",
+        "text": "30°"
+      },
+      {
+        "letter": "C",
+        "text": "60°"
+      },
+      {
+        "letter": "D",
+        "text": "45°"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "20",
+    "type": "mcq"
+  },
+  {
+    "id": 131,
+    "text": "To‘g‘ri burchakli parallelepipeding bir uchidan chiquvchi qirralari 14,8 sm, 7,5 sm va 12,5 sm. Parallelepipeding sirti yuzini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "779,5 sm²"
+      },
+      {
+        "letter": "B",
+        "text": "389,75 sm²"
+      },
+      {
+        "letter": "C",
+        "text": "185 sm²"
+      },
+      {
+        "letter": "D",
+        "text": "93,5 sm²"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "779.5",
+    "type": "mcq"
+  },
+  {
+    "id": 132,
+    "text": "To‘g‘ri to‘rtburchak qo‘shni tomonlarining uzunligi 5:4 kabi nisbatda. Uning perimetri 36 ga teng bo‘lsa, to‘g‘ri to‘rtburchakning yuzini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "20"
+      },
+      {
+        "letter": "B",
+        "text": "30"
+      },
+      {
+        "letter": "C",
+        "text": "40"
+      },
+      {
+        "letter": "D",
+        "text": "16"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "20",
+    "type": "mcq"
+  },
+  {
+    "id": 133,
+    "text": "Bir oilada 8 yil davomida har yili bir kunda bir bola tug‘ildi. Dastlab 3 ta o‘g‘il bola, keyin 5 ta qiz bola. Agar o‘g‘il bolalar yoshlar yig‘indisi qiz bolalar yoshlar yig‘indisiga teng bo‘lsa, kichik singil necha yoshda?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "2"
+      },
+      {
+        "letter": "B",
+        "text": "3"
+      },
+      {
+        "letter": "C",
+        "text": "4"
+      },
+      {
+        "letter": "D",
+        "text": "5"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "3",
+    "type": "mcq"
+  },
+  {
+    "id": 134,
+    "text": "Ikki xonali son o‘zining raqamlar yig‘indisidan 6 marta ko‘p. Shu sonni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "45"
+      },
+      {
+        "letter": "B",
+        "text": "54"
+      },
+      {
+        "letter": "C",
+        "text": "60"
+      },
+      {
+        "letter": "D",
+        "text": "36"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "60",
+    "type": "mcq"
+  },
+  {
+    "id": 135,
+    "text": "Bahorda o‘z vaznining \\(\\frac{1}{4}\\) qismini yo‘qotdi. Yozda \\(\\frac{1}{5}\\) qismini tikladi, kuzda \\(\\frac{1}{10}\\) qismini yo‘qotdi, qishda esa \\(\\frac{1}{5}\\) qismini tikladi. Shu vaqt mobaynida uning vazni qanday o‘zgardi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "frac{1}{10} qismga ortdi"
+      },
+      {
+        "letter": "B",
+        "text": "frac{1}{10} qismga kamaydi"
+      },
+      {
+        "letter": "C",
+        "text": "frac{1}{20} qismga ortdi"
+      },
+      {
+        "letter": "D",
+        "text": "frac{1}{20} qismga ortdi kamaydi"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "110",
+    "type": "mcq"
+  },
+  {
+    "id": 136,
+    "text": "555 va 275 sonlarining EKUK ini EKUB iga nisbatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "152625"
+      },
+      {
+        "letter": "B",
+        "text": "6105"
+      },
+      {
+        "letter": "C",
+        "text": "6015"
+      },
+      {
+        "letter": "D",
+        "text": "825"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "6105",
+    "type": "mcq"
+  },
+  {
+    "id": 137,
+    "text": "50, 60 va 90 sonlarining eng kichik umumiy karralisining natural bo‘luvchilari nechta?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "27"
+      },
+      {
+        "letter": "B",
+        "text": "9"
+      },
+      {
+        "letter": "C",
+        "text": "18"
+      },
+      {
+        "letter": "D",
+        "text": "6"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "9",
+    "type": "mcq"
+  },
+  {
+    "id": 138,
+    "text": "To‘g‘ri to‘rtburchakning uzunligi 5,6 sm, kengligi esa uzunligining \\(\\frac{7}{8}\\) qismini tashkil qiladi. To‘g‘ri to‘rtburchakning perimetri va yuzi yig‘indisining son qiymatini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "21"
+      },
+      {
+        "letter": "B",
+        "text": "10,5"
+      },
+      {
+        "letter": "C",
+        "text": "48,44"
+      },
+      {
+        "letter": "D",
+        "text": "27,44"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "21",
+    "type": "mcq"
+  },
+  {
+    "id": 139,
+    "text": "\\(a + b = 12\\) tenglik bajariladigan \\(a\\) va \\(b\\) (\\(a > b\\)) tub sonlar juftligi nechta?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "1"
+      },
+      {
+        "letter": "B",
+        "text": "2"
+      },
+      {
+        "letter": "C",
+        "text": "3"
+      },
+      {
+        "letter": "D",
+        "text": "4"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "1",
+    "type": "mcq"
+  },
+  {
+    "id": 140,
+    "text": "16 dan katta, ammo 25 dan kichik murakkab sonlar yig‘indisining tub bo‘lmagan natural bo‘luvchilari nechta?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3"
+      },
+      {
+        "letter": "B",
+        "text": "4"
+      },
+      {
+        "letter": "C",
+        "text": "2"
+      },
+      {
+        "letter": "D",
+        "text": "8"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "4",
+    "type": "mcq"
+  },
+  {
+    "id": 141,
+    "text": "1 dan 1000 gacha sonlar ichida 2 ga ham, 5 ga ham bo‘linmaydiganlari nechta?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "600"
+      },
+      {
+        "letter": "B",
+        "text": "400"
+      },
+      {
+        "letter": "C",
+        "text": "200"
+      },
+      {
+        "letter": "D",
+        "text": "500"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "600",
+    "type": "mcq"
+  },
+  {
+    "id": 142,
+    "text": "Berilgan sonlardan 2 ga va 3 ga bo‘linadigan sonni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "7316"
+      },
+      {
+        "letter": "B",
+        "text": "2326"
+      },
+      {
+        "letter": "C",
+        "text": "7434"
+      },
+      {
+        "letter": "D",
+        "text": "5233"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "2326",
+    "type": "mcq"
+  },
+  {
+    "id": 143,
+    "text": "Hisoblang: \\(1 + \\frac{1}{1 − \\frac{1}{3}}\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3"
+      },
+      {
+        "letter": "B",
+        "text": "3,5"
+      },
+      {
+        "letter": "C",
+        "text": "2,4"
+      },
+      {
+        "letter": "D",
+        "text": "4"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "2.4",
+    "type": "mcq"
+  },
+  {
+    "id": 144,
+    "text": "9 ga bo‘linish uchun * o‘rniga qanday raqamni qo‘yish kerak? 38*25",
+    "options": [
+      {
+        "letter": "A",
+        "text": "7"
+      },
+      {
+        "letter": "B",
+        "text": "6"
+      },
+      {
+        "letter": "C",
+        "text": "3"
+      },
+      {
+        "letter": "D",
+        "text": "0"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "6",
+    "type": "mcq"
+  },
+  {
+    "id": 145,
+    "text": "14 va 12 sonlarining umumiy karralisi bo‘lib, ammo 170 dan kichik bo‘lgan sonlar yig‘indisini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "252"
+      },
+      {
+        "letter": "B",
+        "text": "224"
+      },
+      {
+        "letter": "C",
+        "text": "168"
+      },
+      {
+        "letter": "D",
+        "text": "84"
+      }
+    ],
+    "answer": "B",
+    "correctAnswerText": "224",
+    "type": "mcq"
+  },
+  {
+    "id": 146,
+    "text": "Soat strelkasi 12 dan 18 minut ichida necha bo‘lak harakat qiladi?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3"
+      },
+      {
+        "letter": "B",
+        "text": "6"
+      },
+      {
+        "letter": "C",
+        "text": "9"
+      },
+      {
+        "letter": "D",
+        "text": "12"
+      }
+    ],
+    "answer": "C",
+    "correctAnswerText": "9",
+    "type": "mcq"
+  },
+  {
+    "id": 147,
+    "text": "\\(3 \\frac{5}{8} − \\frac{5}{12} < a < 7 \\frac{7}{12}\\) tengsizlikni qanoatlantiruvchi \\(a\\) natural sonlar sonini toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3"
+      },
+      {
+        "letter": "B",
+        "text": "5"
+      },
+      {
+        "letter": "C",
+        "text": "6"
+      },
+      {
+        "letter": "D",
+        "text": "7"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "3",
+    "type": "mcq"
+  },
+  {
+    "id": 148,
+    "text": "\\((2x + 1) : 2 = 5\\) tenglamaning ildizi 20 dan necha marta kichik?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "4"
+      },
+      {
+        "letter": "B",
+        "text": "5"
+      },
+      {
+        "letter": "C",
+        "text": "6"
+      },
+      {
+        "letter": "D",
+        "text": "10"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "4",
+    "type": "mcq"
+  },
+  {
+    "id": 149,
+    "text": "Agar \\(4a = 8\\) bo‘lsa, \\(10x\\) ni toping.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "20"
+      },
+      {
+        "letter": "B",
+        "text": "30"
+      },
+      {
+        "letter": "C",
+        "text": "40"
+      },
+      {
+        "letter": "D",
+        "text": "42"
+      }
+    ],
+    "answer": "D",
+    "correctAnswerText": "42",
+    "type": "mcq"
+  },
+  {
+    "id": 150,
+    "text": "Ifodaning qiymatini toping: \\(1,3 \\cdot (1,9 + 19,5 : 3,1 − \\frac{62}{75} − \\frac{45}{15})\\)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "10,5"
+      },
+      {
+        "letter": "B",
+        "text": "12,6"
+      },
+      {
+        "letter": "C",
+        "text": "13,25"
+      },
+      {
+        "letter": "D",
+        "text": "13,5"
+      }
+    ],
+    "answer": "A",
+    "correctAnswerText": "10.5",
+    "type": "mcq"
+  }
+]

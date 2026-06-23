@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peshqadamlar — Matematika Olimpiadasi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥇</text></svg>">
+  <!-- Canvas for certificate -->
+  <style>
+    .top3-card {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .podium-card {
+      text-align: center;
+      padding: 20px 12px;
+      border-radius: 20px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    .podium-card:hover { transform: translateY(-4px); }
+    .podium-1 { background: linear-gradient(135deg, #FFF9C4, #FFD54F); border: 2px solid #F9A825; order: 2; }
+    .podium-2 { background: linear-gradient(135deg, #F5F5F5, #BDBDBD); border: 2px solid #9E9E9E; order: 1; }
+    .podium-3 { background: linear-gradient(135deg, #FFE0CC, #FFAB76); border: 2px solid #FF7043; order: 3; }
+    .podium-crown { font-size: 2rem; margin-bottom: 6px; }
+    .podium-name { font-weight: 800; font-size: 0.95rem; color: #1A1A2E; margin-bottom: 4px; }
+    .podium-score { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; }
+    .podium-time { font-size: 0.78rem; color: #6B7280; font-weight: 600; margin-top: 4px; }
+    .cert-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: all 0.2s;
+    }
+    .cert-btn:hover { transform: scale(1.05); }
+    .cert-btn-1 { background: linear-gradient(135deg, #FFD700, #FFA500); color: #fff; }
+    .cert-btn-2 { background: linear-gradient(135deg, #C0C0C0, #808080); color: #fff; }
+    .cert-btn-3 { background: linear-gradient(135deg, #CD7F32, #8B4513); color: #fff; }
+    @media (max-width: 500px) {
+      .top3-card { grid-template-columns: 1fr; }
+      .podium-1, .podium-2, .podium-3 { order: unset; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-deco">🥇</div>
+  <div class="floating-deco">🏆</div>
+  <div class="floating-deco">⭐</div>
+  <div class="floating-deco">🎖️</div>
+  <div class="floating-deco">🌟</div>
+  <div class="floating-deco">🎯</div>
+
+  <!-- Hidden canvas for certificate -->
+  <canvas id="cert-canvas" style="display:none;"></canvas>
+
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="site-logo">
+        <span class="site-logo-icon">🏆</span>
+        <span class="site-logo-text">Peshqadamlar Jadvali</span>
+      </div>
+      <p class="site-subtitle">Faqat 1-urinish natijalari · Ball teng bo'lsa — kam vaqt yuqorida</p>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <!-- Tab buttons -->
+        <div class="tab-btns">
+          <button class="tab-btn active" id="tab5" onclick="switchTab('5')">📚 5-sinf</button>
+          <button class="tab-btn" id="tab6" onclick="switchTab('6')">📖 6-sinf</button>
+        </div>
+
+        <div id="cert-warning" style="display:none; text-align:center; padding: 12px; background: rgba(255,193,7,0.15); border: 1.5px solid rgba(255,193,7,0.4); color: #7B5E00; border-radius: var(--radius-sm); font-weight: 700; margin-bottom: 24px; font-size: 0.9rem;">
+          ⚠️ Sertifikatlar test to'liq yakunlangach (vaqt tugaganda yoki admin yopganda) ochiladi.
+        </div>
+
+        <!-- Loading state -->
+        <div id="lb-loading" style="text-align:center; padding:40px; color:#6B7280; font-weight:700;">
+          <div class="spinner" style="margin:0 auto 16px;"></div>
+          Yuklanmoqda...
+        </div>
+
+        <!-- Empty state -->
+        <div id="lb-empty" style="display:none; text-align:center; padding:48px 20px;">
+          <div style="font-size:4rem; margin-bottom:16px;">📭</div>
+          <div style="font-weight:700; font-size:1.1rem; color:#374151; margin-bottom:8px;">Hali natijalar yo'q</div>
+          <div style="font-size:0.9rem; color:#9CA3AF; font-weight:600;">Bu sinfda hali test ishlagan o'quvchi yo'q</div>
+        </div>
+
+        <!-- Top 3 podium -->
+        <div id="top3-podium" style="display:none;">
+          <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1rem; margin-bottom:16px; color:#374151;">
+            🏅 TOP-3 O'rinlar
+          </div>
+          <div class="top3-card" id="podium-cards"></div>
+        </div>
+
+        <!-- Full table -->
+        <div id="lb-table-wrap" style="display:none;">
+          <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:0.95rem; margin-bottom:12px; color:#374151;">
+            📋 To'liq jadval
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="leaderboard-table" id="lb-table">
+              <thead>
+                <tr>
+                  <th>O'rin</th>
+                  <th>Ism Familya</th>
+                  <th>Ball</th>
+                  <th>Vaqt</th>
+                  <th>Sana</th>
+                </tr>
+              </thead>
+              <tbody id="lb-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:16px;">
+        <a href="/" class="btn btn-outline">🏠 Bosh sahifa</a>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      Muallif: <span>Otabek Nuraliyev</span> · Matematika olimpiadasi testi · 2026
+    </footer>
+  </div>
+
+  <script>
+    let currentSinf = '5';
+    let leaderboardData = {};
+    let isTestOpen = false;
+
+    async function checkTestStatus() {
+      try {
+        const resp = await fetch('/api/settings');
+        const settings = await resp.json();
+        isTestOpen = settings.testOpen;
+        if (isTestOpen) {
+          document.getElementById('cert-warning').style.display = 'block';
+        } else {
+          document.getElementById('cert-warning').style.display = 'none';
+        }
+      } catch(e) {}
+    }
+
+    function pad(n) { return n.toString().padStart(2,'0'); }
+    function formatTime(sec) {
+      const h = Math.floor(sec/3600), m = Math.floor((sec%3600)/60), s = sec%60;
+      return h > 0 ? `${pad(h)}:${pad(m)}:${pad(s)}` : `${pad(m)}:${pad(s)}`;
+    }
+    function formatDate(iso) {
+      const d = new Date(iso);
+      return `${pad(d.getDate())}.${pad(d.getMonth()+1)} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    }
+
+    async function loadLeaderboard(sinf) {
+      document.getElementById('lb-loading').style.display = 'block';
+      document.getElementById('lb-empty').style.display = 'none';
+      document.getElementById('top3-podium').style.display = 'none';
+      document.getElementById('lb-table-wrap').style.display = 'none';
+
+      try {
+        const resp = await fetch(`/api/leaderboard/${sinf}`);
+        const data = await resp.json();
+        leaderboardData[sinf] = data;
+        renderLeaderboard(sinf, data);
+      } catch(e) {
+        document.getElementById('lb-loading').innerHTML = '<div style="color:#EF4444; font-weight:700;">Ma\'lumot yuklanmadi</div>';
+      }
+    }
+
+    function renderLeaderboard(sinf, data) {
+      document.getElementById('lb-loading').style.display = 'none';
+
+      if (!data || data.length === 0) {
+        document.getElementById('lb-empty').style.display = 'block';
+        return;
+      }
+
+      // Top 3 podium
+      const top3 = data.slice(0, 3);
+      const podiumCards = document.getElementById('podium-cards');
+      const crowns = ['👑','🥈','🥉'];
+      const certBtnClass = ['cert-btn-1','cert-btn-2','cert-btn-3'];
+      const rankLabels = ['1-o\'rin','2-o\'rin','3-o\'rin'];
+
+      podiumCards.innerHTML = top3.map((r, i) => `
+        <div class="podium-card podium-${i+1}">
+          <div class="podium-crown">${crowns[i]}</div>
+          <div style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:#6B7280; margin-bottom:6px;">${rankLabels[i]}</div>
+          <div class="podium-name">${escHtml(r.name)}</div>
+          <div class="podium-score" style="color:${['#F9A825','#757575','#FF7043'][i]};">${r.score}</div>
+          <div class="podium-time">⏱ ${formatTime(r.timeSpent)}</div>
+          ${isTestOpen ? '' : `
+          <button class="cert-btn ${certBtnClass[i]}" onclick="generateCertificate('${escHtml(r.name).replace(/'/g,"\\'")}', ${i+1}, ${r.score}, '${sinf}')">
+            🎓 Sertifikat
+          </button>
+          `}
+        </div>
+      `).join('');
+      document.getElementById('top3-podium').style.display = 'block';
+
+      // Full table
+      const tbody = document.getElementById('lb-tbody');
+      tbody.innerHTML = data.map((r, i) => `
+        <tr class="${i === 0 ? 'top1-row' : i === 1 ? 'top2-row' : i === 2 ? 'top3-row' : ''}">
+          <td><span class="rank-badge ${i < 3 ? 'rank-'+(i+1) : 'rank-other'}">${i+1}</span></td>
+          <td><strong>${escHtml(r.name)}</strong></td>
+          <td>
+            <strong style="font-family:'Poppins',sans-serif; color:#0288D1;">${r.score}</strong>
+            <span style="font-size:0.78rem; color:#9CA3AF;">/100</span>
+          </td>
+          <td style="font-family:'Poppins',sans-serif; font-size:0.9rem;">${formatTime(r.timeSpent)}</td>
+          <td style="font-size:0.85rem; color:#6B7280;">${formatDate(r.submittedAt)}</td>
+        </tr>
+      `).join('');
+      document.getElementById('lb-table-wrap').style.display = 'block';
+    }
+
+    function switchTab(sinf) {
+      currentSinf = sinf;
+      document.getElementById('tab5').classList.toggle('active', sinf === '5');
+      document.getElementById('tab6').classList.toggle('active', sinf === '6');
+      if (leaderboardData[sinf]) {
+        renderLeaderboard(sinf, leaderboardData[sinf]);
+      } else {
+        loadLeaderboard(sinf);
+      }
+    }
+
+    function escHtml(t) {
+      return (t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    // ─── Sertifikat yaratish (Canvas) ───────────────────────────────────────
+    function generateCertificate(name, rank, score, sinf) {
+      const canvas = document.getElementById('cert-canvas');
+      const W = 1200, H = 850;
+      canvas.width = W;
+      canvas.height = H;
+      const ctx = canvas.getContext('2d');
+
+      // Gradient background
+      const bg = ctx.createLinearGradient(0, 0, W, H);
+      bg.addColorStop(0, '#FFF9E6');
+      bg.addColorStop(0.4, '#FFFDE7');
+      bg.addColorStop(0.7, '#E3F2FD');
+      bg.addColorStop(1, '#EDE7F6');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, W, H);
+
+      // Decorative circles
+      const circles = [
+        {x:80,y:80,r:120,color:'rgba(255,215,61,0.12)'},
+        {x:W-80,y:80,r:100,color:'rgba(67,203,255,0.12)'},
+        {x:80,y:H-80,r:90,color:'rgba(171,71,188,0.1)'},
+        {x:W-80,y:H-80,r:130,color:'rgba(255,107,107,0.1)'},
+        {x:W/2,y:H/2,r:200,color:'rgba(255,255,255,0.3)'},
+      ];
+      circles.forEach(c => {
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI*2);
+        ctx.fillStyle = c.color;
+        ctx.fill();
+      });
+
+      // Outer border
+      ctx.strokeStyle = rank === 1 ? '#F9A825' : rank === 2 ? '#9E9E9E' : '#FF7043';
+      ctx.lineWidth = 8;
+      ctx.strokeRect(24, 24, W-48, H-48);
+
+      // Inner border
+      ctx.strokeStyle = rank === 1 ? '#FFD54F' : rank === 2 ? '#BDBDBD' : '#FFAB76';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(40, 40, W-80, H-80);
+
+      // Stars decoration
+      drawStars(ctx, W, H, rank);
+
+      // Title
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#1A1A2E';
+      ctx.font = 'bold 28px Poppins, Arial';
+      ctx.fillText('MATEMATIKA OLIMPIADASI', W/2, 110);
+
+      ctx.font = 'bold 22px Poppins, Arial';
+      ctx.fillStyle = '#374151';
+      ctx.fillText(`YOZGI TAYYORGARLIK TESTI · ${sinf}-SINF`, W/2, 148);
+
+      // Horizontal line
+      const lineGrad = ctx.createLinearGradient(100, 0, W-100, 0);
+      lineGrad.addColorStop(0, 'transparent');
+      lineGrad.addColorStop(0.3, rank === 1 ? '#F9A825' : rank === 2 ? '#9E9E9E' : '#FF7043');
+      lineGrad.addColorStop(0.7, rank === 1 ? '#F9A825' : rank === 2 ? '#9E9E9E' : '#FF7043');
+      lineGrad.addColorStop(1, 'transparent');
+      ctx.strokeStyle = lineGrad;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(100, 168); ctx.lineTo(W-100, 168);
+      ctx.stroke();
+
+      // SERTIFIKAT text
+      ctx.fillStyle = rank === 1 ? '#E65100' : rank === 2 ? '#424242' : '#BF360C';
+      ctx.font = 'bold 52px Poppins, Arial';
+      ctx.fillText('S E R T I F I K A T', W/2, 250);
+
+      // Medal emoji alternative
+      const medalEmoji = rank === 1 ? '🥇' : rank === 2 ? '🥈' : '🥉';
+      ctx.font = '80px Arial';
+      ctx.fillText(medalEmoji, W/2, 350);
+
+      // Name
+      ctx.fillStyle = '#0D47A1';
+      ctx.font = 'bold 54px Poppins, Arial';
+      ctx.fillText(name, W/2, 440);
+
+      // Underline name
+      const nameWidth = ctx.measureText(name).width;
+      ctx.strokeStyle = '#0D47A1';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(W/2 - nameWidth/2 - 10, 455);
+      ctx.lineTo(W/2 + nameWidth/2 + 10, 455);
+      ctx.stroke();
+
+      // Description
+      ctx.fillStyle = '#374151';
+      ctx.font = '26px Nunito, Arial';
+      const rankText = rank === 1 ? 'birinchi' : rank === 2 ? 'ikkinchi' : 'uchinchi';
+      ctx.fillText(`Matematika olimpiadasi tayyorgarlik testida`, W/2, 510);
+      ctx.fillText(`${rankText} o'rinni egalladi`, W/2, 548);
+
+      // Score badge
+      drawRoundRect(ctx, W/2 - 140, 575, 280, 60, 30,
+        rank === 1 ? '#F9A825' : rank === 2 ? '#757575' : '#FF7043'
+      );
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 26px Poppins, Arial';
+      ctx.fillText(`${score} / 100 ball`, W/2, 614);
+
+      // Divider
+      ctx.strokeStyle = 'rgba(0,0,0,0.08)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(100, 668); ctx.lineTo(W-100, 668);
+      ctx.stroke();
+
+      // Teacher info
+      ctx.fillStyle = '#6B7280';
+      ctx.font = '20px Nunito, Arial';
+      ctx.fillText("O'qituvchi:", W/4, 710);
+      ctx.fillStyle = '#1A1A2E';
+      ctx.font = 'bold 24px Poppins, Arial';
+      ctx.fillText('Otabek Nuraliyev', W/4, 740);
+
+      // Date
+      const now = new Date();
+      const dateStr = `${now.getDate()}.${pad(now.getMonth()+1)}.${now.getFullYear()}`;
+      ctx.fillStyle = '#6B7280';
+      ctx.font = '20px Nunito, Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('Sana:', W*3/4, 710);
+      ctx.fillStyle = '#1A1A2E';
+      ctx.font = 'bold 24px Poppins, Arial';
+      ctx.fillText(dateStr, W*3/4, 740);
+
+      // Signature line
+      ctx.strokeStyle = '#9CA3AF';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(W/4 - 80, 760); ctx.lineTo(W/4 + 80, 760);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(W*3/4 - 60, 760); ctx.lineTo(W*3/4 + 60, 760);
+      ctx.stroke();
+
+      // Bottom watermark
+      ctx.fillStyle = 'rgba(0,0,0,0.15)';
+      ctx.font = '15px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('Matematika olimpiadasi tayyorgarlik testi · 2026 · Otabek Nuraliyev', W/2, 800);
+
+      // Download
+      const link = document.createElement('a');
+      link.download = `sertifikat-${rank}-orn-${name.replace(/\s+/g, '_')}.jpg`;
+      link.href = canvas.toDataURL('image/jpeg', 0.95);
+      link.click();
+    }
+
+    function drawStars(ctx, W, H, rank) {
+      const color = rank === 1 ? '#F9A825' : rank === 2 ? '#9E9E9E' : '#FF7043';
+      const positions = [
+        {x:60, y:60}, {x:W-60, y:60}, {x:60, y:H-60}, {x:W-60, y:H-60},
+        {x:W/2, y:55}, {x:W/2, y:H-55},
+      ];
+      positions.forEach(p => drawStar(ctx, p.x, p.y, 5, 16, 7, color));
+    }
+
+    function drawStar(ctx, cx, cy, spikes, outerR, innerR, color) {
+      let rot = Math.PI/2*3, x, y, step = Math.PI/spikes;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - outerR);
+      for(let i=0; i<spikes; i++) {
+        x = cx + Math.cos(rot)*outerR; y = cy + Math.sin(rot)*outerR;
+        ctx.lineTo(x, y); rot += step;
+        x = cx + Math.cos(rot)*innerR; y = cy + Math.sin(rot)*innerR;
+        ctx.lineTo(x, y); rot += step;
+      }
+      ctx.lineTo(cx, cy - outerR);
+      ctx.closePath();
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    function drawRoundRect(ctx, x, y, w, h, r, color) {
+      ctx.beginPath();
+      ctx.moveTo(x+r, y);
+      ctx.lineTo(x+w-r, y);
+      ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+      ctx.lineTo(x+w, y+h-r);
+      ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+      ctx.lineTo(x+r, y+h);
+      ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+      ctx.lineTo(x, y+r);
+      ctx.quadraticCurveTo(x, y, x+r, y);
+      ctx.closePath();
+      ctx.fillStyle = color;
+      ctx.fill();
+    }
+
+    function pad(n) { return n.toString().padStart(2,'0'); }
+
+    // Init
+    window.addEventListener('DOMContentLoaded', async () => {
+      await checkTestStatus();
+      loadLeaderboard('5');
+    });
+
+    // Auto-refresh every 30 seconds
+    setInterval(async () => {
+      await checkTestStatus();
+      if (leaderboardData[currentSinf]) loadLeaderboard(currentSinf);
+    }, 30000);
+  </script>
+</body>
+</html>

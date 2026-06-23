@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natija — Matematika Olimpiadasi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏅</text></svg>">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderAllMath()"></script>
+</head>
+<body>
+  <div class="floating-deco">🎉</div>
+  <div class="floating-deco">⭐</div>
+  <div class="floating-deco">🏆</div>
+  <div class="floating-deco">🎊</div>
+  <div class="floating-deco">✨</div>
+  <div class="floating-deco">🌟</div>
+
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="site-logo">
+        <span class="site-logo-icon">🏆</span>
+        <span class="site-logo-text">Matematika Olimpiadasi</span>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="card" id="result-card">
+        <!-- Score section -->
+        <div style="text-align:center; margin-bottom:28px;">
+          <div id="result-emoji" style="font-size:3.5rem; margin-bottom:12px;"></div>
+          <div id="score-circle" class="result-score-circle">
+            <div class="result-score-num" id="score-num">—</div>
+            <div class="result-score-max">/ 100</div>
+          </div>
+          <h1 class="card-title" id="result-title" style="text-align:center; margin-bottom:4px;"></h1>
+          <p style="color:#6B7280; font-weight:600; font-size:0.95rem;" id="result-subtitle"></p>
+        </div>
+
+        <!-- Stats -->
+        <div class="result-stats" id="result-stats"></div>
+
+        <!-- Attempt info -->
+        <div id="attempt-alert" class="alert" style="display:none; margin-bottom:20px;"></div>
+
+        <!-- Action buttons -->
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px;">
+          <a href="/profile" class="btn btn-outline" style="flex:1; min-width:160px;">🏠 Profilga qaytish</a>
+          <a href="/leaderboard" class="btn btn-sky" style="flex:1; min-width:160px;">📊 Peshqadamlar</a>
+        </div>
+
+        <!-- Divider -->
+        <div style="border-top:2px solid rgba(0,0,0,0.06); padding-top:24px; margin-bottom:20px;">
+          <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:1.1rem; margin-bottom:4px;">
+            📋 Yechilishi bilan tanishish
+          </div>
+          <p style="font-size:0.88rem; color:#6B7280; font-weight:600;">
+            Har bir savol uchun to'g'ri javob ko'rsatilgan
+          </p>
+        </div>
+
+        <!-- Section tabs -->
+        <div class="tab-btns" id="section-tabs">
+          <button class="tab-btn active" onclick="showSection('easy', this)">⭐ Oson (1–10)</button>
+          <button class="tab-btn" onclick="showSection('medium', this)">🔥 O'rta (11–20)</button>
+          <button class="tab-btn" onclick="showSection('hard', this)">💎 Yopiq (21–30)</button>
+        </div>
+
+        <!-- Solutions -->
+        <div id="solutions-easy"></div>
+        <div id="solutions-medium" style="display:none;"></div>
+        <div id="solutions-hard" style="display:none;"></div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      Muallif: <span>Otabek Nuraliyev</span> · Matematika olimpiadasi testi · 2026
+    </footer>
+  </div>
+
+  <script>
+    function renderAllMath() {
+      document.querySelectorAll('.math-render').forEach(el => {
+        renderMathInElement(el, {
+          delimiters: [
+            {left:"\\[", right:"\\]", display:true},
+            {left:"\\(", right:"\\)", display:false},
+            {left:"$", right:"$", display:false}
+          ],
+          throwOnError: false
+        });
+      });
+    }
+
+    function pad(n) { return n.toString().padStart(2,'0'); }
+    function formatTime(sec) {
+      const h = Math.floor(sec/3600), m = Math.floor((sec%3600)/60), s = sec%60;
+      return h > 0 ? `${pad(h)}:${pad(m)}:${pad(s)}` : `${pad(m)}:${pad(s)}`;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const raw = sessionStorage.getItem('testResult');
+      if (!raw) { window.location.href = '/'; return; }
+
+      const result = JSON.parse(raw);
+      const { name, sinf, score, maxScore, timeSpent, breakdown, attemptNum } = result;
+
+      // Score circle
+      const pct = Math.round((score / maxScore) * 100);
+      const circle = document.getElementById('score-circle');
+      let circleClass = 'score-low';
+      let emoji = '💪'; let title = 'Yaxshi harakat!';
+      if (pct >= 80) { circleClass = 'score-excellent'; emoji = '🏆'; title = 'Ajoyib natija!'; }
+      else if (pct >= 60) { circleClass = 'score-good'; emoji = '🌟'; title = 'Yaxshi natija!'; }
+      else if (pct >= 40) { circleClass = 'score-ok'; emoji = '👍'; title = 'O\'rtacha natija'; }
+      circle.classList.add(circleClass);
+
+      document.getElementById('score-num').textContent = score;
+      document.getElementById('result-emoji').textContent = emoji;
+      document.getElementById('result-title').textContent = `${name} — ${sinf}-sinf`;
+      document.getElementById('result-subtitle').textContent = title;
+
+      // Stats
+      const correct = breakdown.filter(b => b.correct).length;
+      const wrong = breakdown.length - correct;
+      document.getElementById('result-stats').innerHTML = `
+        <div class="stat-box">
+          <div class="stat-box-value" style="color:#0288D1;">${score}</div>
+          <div class="stat-box-label">Ball</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-value" style="color:#22C55E;">${correct}</div>
+          <div class="stat-box-label">To'g'ri</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-value" style="color:#EF4444;">${wrong}</div>
+          <div class="stat-box-label">Noto'g'ri</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-value" style="color:#F59E0B;">${formatTime(timeSpent)}</div>
+          <div class="stat-box-label">Vaqt</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-value" style="color:#8B5CF6;">${attemptNum}/3</div>
+          <div class="stat-box-label">Urinish</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-value" style="color:#06B6D4;">${pct}%</div>
+          <div class="stat-box-label">Foiz</div>
+        </div>
+      `;
+
+      // Attempt info
+      const alertEl = document.getElementById('attempt-alert');
+      if (attemptNum === 1) {
+        alertEl.className = 'alert alert-success';
+        alertEl.innerHTML = '✅ Bu sizning <strong>1-urinishingiz</strong> — natija peshqadamlar jadvaliga qo\'shildi!';
+        alertEl.style.display = 'flex';
+        if (pct >= 50) launchConfetti();
+      } else {
+        alertEl.className = 'alert alert-info';
+        alertEl.innerHTML = `ℹ️ Bu sizning <strong>${attemptNum}-urinishingiz</strong> — bu natija peshqadamlar jadvaliga ta'sir qilmaydi.`;
+        alertEl.style.display = 'flex';
+      }
+
+      // Build solutions
+      buildSolutions(breakdown);
+    });
+
+    function buildSolutions(breakdown) {
+      const sections = {
+        easy: breakdown.filter(b => b.section === 'easy'),
+        medium: breakdown.filter(b => b.section === 'medium'),
+        hard: breakdown.filter(b => b.section === 'hard')
+      };
+
+      ['easy', 'medium', 'hard'].forEach(sec => {
+        const container = document.getElementById(`solutions-${sec}`);
+        const items = sections[sec];
+        const sectionScore = items.reduce((s, b) => s + b.points, 0);
+        const sectionMax = sec === 'easy' ? 20 : sec === 'medium' ? 30 : 50;
+
+        container.innerHTML = `
+          <div style="background:rgba(0,0,0,0.03); border-radius:12px; padding:12px 16px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; font-size:0.9rem; color:#374151;">
+              ${{ easy:'⭐ Oson savollar', medium:'🔥 O\'rtacha savollar', hard:'💎 Yopiq savollar'}[sec]}
+            </span>
+            <span style="font-weight:800; color:#0288D1; font-family:'Poppins',sans-serif;">${sectionScore}/${sectionMax}</span>
+          </div>
+        ` + items.map((b, i) => {
+          const qNum = sec === 'easy' ? i+1 : sec === 'medium' ? i+11 : i+21;
+          const userAns = b.userAnswer || '(javob berilmagan)';
+          const correctAns = b.correctAnswer || '—';
+          return `
+            <div class="solution-item ${b.correct ? 'correct' : 'wrong'}">
+              <div class="solution-icon">${b.correct ? '✅' : '❌'}</div>
+              <div style="flex:1;">
+                <div class="solution-text">
+                  <strong>Savol ${qNum}</strong>
+                  <span style="margin-left:8px; font-size:0.8rem; color:#9CA3AF;">(${b.points > 0 ? '+'+b.points : 0} ball)</span>
+                </div>
+                <div class="solution-answer">
+                  Sizning javobingiz: <strong>${escHtml(String(userAns))}</strong>
+                  ${!b.correct ? ` · To'g'ri javob: <strong style="color:#22C55E;">${escHtml(String(correctAns))}</strong>` : ''}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      });
+    }
+
+    function escHtml(t) {
+      return (t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function showSection(sec, btn) {
+      ['easy','medium','hard'].forEach(s => {
+        document.getElementById(`solutions-${s}`).style.display = s === sec ? 'block' : 'none';
+      });
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function launchConfetti() {
+      const colors = ['#FFD93D','#FF6B6B','#43CBFF','#A8E063','#AB47BC','#FF8E53'];
+      for (let i = 0; i < 60; i++) {
+        setTimeout(() => {
+          const el = document.createElement('div');
+          el.className = 'confetti-piece';
+          el.style.left = Math.random() * 100 + 'vw';
+          el.style.background = colors[Math.floor(Math.random() * colors.length)];
+          el.style.width = (8 + Math.random() * 8) + 'px';
+          el.style.height = (8 + Math.random() * 8) + 'px';
+          el.style.animationDuration = (2 + Math.random() * 2) + 's';
+          el.style.animationDelay = Math.random() * 0.5 + 's';
+          document.body.appendChild(el);
+          setTimeout(() => el.remove(), 4000);
+        }, i * 40);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -155,6 +155,19 @@
       }
     }
 
+    function formatOptionMath(text) {
+      let t = text || '';
+      t = t.replace(/\bfrac{/g, '\\frac{');
+      if (t.includes('\\') || t.includes('^') || t.includes('_') || /^[0-9\s.,\-\+\*\/=()]+$/.test(t)) {
+        try {
+          return katex.renderToString(t, { displayMode: false, throwOnError: false });
+        } catch(e) {
+          return escapeHtml(t);
+        }
+      }
+      return escapeHtml(t);
+    }
+
     // ─── Init ──────────────────────────────────────────────────────────────
     window.addEventListener('DOMContentLoaded', () => {
       const raw = sessionStorage.getItem('testData');
@@ -266,7 +279,7 @@
                 id="opt-${idx}-${opt.letter}"
                 onclick="selectOption(${idx}, '${q._section}', ${q._idx}, '${opt.letter}')">
                 <span class="option-letter">${opt.letter}</span>
-                <span class="option-text">${escapeHtml(opt.text)}</span>
+                <span class="option-text">${formatOptionMath(opt.text)}</span>
               </button>
             `).join('') +
           `</div>`;

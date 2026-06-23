@@ -130,7 +130,7 @@ app.get('/api/settings', async (req, res) => {
 app.get('/api/students/list/:sinf', async (req, res) => {
   const sinf = req.params.sinf;
   const students = await Student.find({ sinf }).sort({ name: 1 });
-  const list = students.map(s => ({ id: s.id, name: s.name }));
+  const list = students.map(s => ({ id: s.id, name: formatName(s.name) }));
   res.json(list);
 });
 
@@ -139,7 +139,7 @@ app.post('/api/login', async (req, res) => {
   const student = await Student.findOne({ id, password });
   
   if (student) {
-    const studentData = { id: student.id, name: student.name, sinf: student.sinf, xp: student.xp, badges: student.badges };
+    const studentData = { id: student.id, name: formatName(student.name), sinf: student.sinf, xp: student.xp, badges: student.badges };
     res.json({ success: true, student: studentData });
   } else {
     res.status(401).json({ error: "Parol noto'g'ri" });
@@ -182,9 +182,6 @@ app.get('/api/questions/:sinf', async (req, res) => {
   const { sinf } = req.params;
   if (!['5', '6'].includes(sinf)) return res.status(400).json({ error: "Noto'g'ri sinf" });
 
-  const allQuestions = readJSON(`questions-${sinf}.json`);
-  if (!allQuestions) return res.status(500).json({ error: 'Savollar topilmadi' });
-
   let settings = await Setting.findOne();
   if (!settings) settings = {};
   const now = new Date();
@@ -194,41 +191,21 @@ app.get('/api/questions/:sinf', async (req, res) => {
   }
   if (!testOpen) return res.status(403).json({ error: 'Test hozir faol emas', testOpen: false });
 
-  const isNaturalNumber = (text) => {
-    if (!text) return false;
-    const str = String(text).trim();
-    if (!/^\\d+$/.test(str)) return false;
-    const num = parseInt(str, 10);
-    return num > 0;
-  };
+  const { easy, medium, hard } = getRandomQuestions(sinf);
+  if (easy.length === 0) return res.status(500).json({ error: 'Savollar topilmadi' });
 
-  const easy = shuffle(allQuestions.filter(q => q.id <= 50)).slice(0, 10);
-  const medium = shuffle(allQuestions.filter(q => q.id > 50 && q.id <= 100)).slice(0, 10);
-  
-  const hardPool = allQuestions.filter(q => q.id > 100 && isNaturalNumber(q.correctAnswerText));
-  const hard = shuffle(hardPool).slice(0, 10);
-
-  const fillEasy = easy.length < 10 ? shuffle(allQuestions).slice(0, 10) : easy;
-  const fillMedium = medium.length < 10 ? shuffle(allQuestions.filter(q => !fillEasy.find(e => e.id === q.id))).slice(0, 10) : medium;
-  
-  let fillHard = hard;
-  if (fillHard.length < 10) {
-    const globalNatural = allQuestions.filter(q => isNaturalNumber(q.correctAnswerText) && !fillEasy.find(e => e.id === q.id) && !fillMedium.find(e => e.id === q.id));
-    fillHard = shuffle(globalNatural).slice(0, 10);
-  }
-
-  const easyForClient = fillEasy.map(q => ({ ...q, answer: undefined, correctAnswerText: undefined, type: 'mcq' }));
-  const mediumForClient = fillMedium.map(q => ({ ...q, answer: undefined, correctAnswerText: undefined, type: 'mcq' }));
-  const hardForClient = fillHard.map(q => ({ ...q, answer: undefined, correctAnswerText: undefined, options: [], type: 'open' }));
+  const easyForClient = easy.map(q => ({ ...q, answer: undefined, correctAnswerText: undefined, type: 'mcq' }));
+  const mediumForClient = medium.map(q => ({ ...q, answer: undefined, correctAnswerText: undefined, type: 'mcq' }));
+  const hardForClient = hard.map(q => ({ ...q, answer: undefined, correctAnswerText: undefined, options: [], type: 'open' }));
 
   const sessionId = Date.now().toString(36) + Math.random().toString(36).substr(2);
   
   await Session.create({
     sessionId,
     sinf,
-    easy: fillEasy.map(q => ({ id: q.id, answer: q.answer, correctAnswerText: q.correctAnswerText })),
-    medium: fillMedium.map(q => ({ id: q.id, answer: q.answer, correctAnswerText: q.correctAnswerText })),
-    hard: fillHard.map(q => ({ id: q.id, answer: q.answer, correctAnswerText: q.correctAnswerText })),
+    easy,
+    medium,
+    hard,
     testEndTime: settings.testEndTime,
     createdAt: new Date().toISOString()
   });
@@ -360,24 +337,17 @@ app.post('/api/submit', async (req, res) => {
 // ─── API: Peshqadamlar jadvali ───────────────────────────────────────────────
 
 app.get('/api/leaderboard/:sinf', async (req, res) => {
-  const { sinf } = req.params;
-  const results = await Result.find({ sinf, countsForLeaderboard: true });
-
-  const leaderboard = results
-    .sort((a, b) => {
-      if (b.score !== a.score) return b.score - a.score;
-      return a.timeSpent - b.timeSpent;
-    })
-    .map((r, i) => ({
-      rank: i + 1,
-      name: r.name,
-      score: r.score,
-      maxScore: r.maxScore,
-      timeSpent: r.timeSpent,
-      submittedAt: r.submittedAt
-    }));
-
-  res.json(leaderboard);
+  try {
+    let results = await Result.find({ 
+      sinf: req.params.sinf,
+      countsForLeaderboard: true 
+    }).sort({ score: -1, timeSpent: 1 });
+    
+    results = results.map(r => ({ ...r.toObject(), name: formatName(r.name) }));
+    res.json(results);
+  } catch(e) {
+    res.status(500).json({ error: 'Server xatosi' });
+  }
 });
 
 // ─── API: Admin panel ────────────────────────────────────────────────────────
@@ -413,8 +383,13 @@ app.post('/api/admin/settings', adminAuth, async (req, res) => {
 });
 
 app.get('/api/admin/results', adminAuth, async (req, res) => {
-  const results = await Result.find().sort({ id: 1 });
-  res.json(results);
+  try {
+    let results = await Result.find().sort({ submittedAt: -1 });
+    results = results.map(r => ({ ...r.toObject(), name: formatName(r.name) }));
+    res.json(results);
+  } catch(e) {
+    res.status(500).json({ error: 'Server xatosi' });
+  }
 });
 
 app.delete('/api/admin/results', adminAuth, async (req, res) => {
@@ -425,8 +400,13 @@ app.delete('/api/admin/results', adminAuth, async (req, res) => {
 
 // Admin API: O'quvchilarni boshqarish
 app.get('/api/admin/students', adminAuth, async (req, res) => {
-  const students = await Student.find().sort({ sinf: 1, name: 1 });
-  res.json(students);
+  try {
+    let students = await Student.find().sort({ sinf: 1, name: 1 });
+    students = students.map(s => ({ ...s.toObject(), name: formatName(s.name) }));
+    res.json(students);
+  } catch(e) {
+    res.status(500).json({ error: 'Server xatosi' });
+  }
 });
 
 app.post('/api/admin/students', adminAuth, async (req, res) => {
